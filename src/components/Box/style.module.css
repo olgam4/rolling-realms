@@ -1,0 +1,7 @@
+.box {
+  user-select: none;
+}
+
+.box:hover {
+  cursor: pointer;
+}

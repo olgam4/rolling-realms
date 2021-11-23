@@ -1,0 +1,92 @@
+.die {
+  --pip: black;
+  --bg: #e0e0e0;
+  border: 1px solid #000;
+  border-radius: 5px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: var(--bg);
+  user-select: none;
+}
+
+.die:hover {
+  --bg: #f0f0f0;
+  --pip: #000;
+}
+
+.marked {
+  --pip: #eee;
+  --bg: #4A4A4A;
+}
+
+.die:before {
+  content: "";
+  background-color: var(--pip);
+  border-radius: 50%;
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.die1:before {
+  top: 8px;
+  left: 8px;
+  height: 4px;
+  width: 4px;
+}
+
+.die2:before {
+  top: 4px;
+  left: 4px;
+  height: 4px;
+  width: 4px;
+  box-shadow: 8px 8px 0px 0px var(--pip);
+}
+
+.die3:before {
+  top: 4px;
+  left: 4px;
+  height: 4px;
+  width: 4px;
+  box-shadow: 4px 4px 0px 0px var(--pip),
+              8px 8px 0px 0px var(--pip);
+}
+
+.die4:before {
+  top: 4px;
+  left: 4px;
+  height: 4px;
+  width: 4px;
+  box-shadow: 0px 8px 0px 0px var(--pip),
+              8px 8px 0px 0px var(--pip),
+              8px 0px 0px 0px var(--pip);
+}
+
+.die5:before {
+  top: 4px;
+  left: 4px;
+  height: 4px;
+  width: 4px;
+  box-shadow: 0px 8px 0px 0px var(--pip),
+              8px 8px 0px 0px var(--pip),
+              4px 4px 0px var(--pip),
+              8px 0px 0px 0px var(--pip);
+}
+
+.die6:before {
+  top: 4px;
+  left: 4px;
+  height: 4px;
+  width: 4px;
+  box-shadow: 0px 8px 0px 0px var(--pip),
+              8px 8px 0px 0px var(--pip),
+              0px 4px 0px var(--pip),
+              8px 4px 0px var(--pip),
+              8px 0px 0px 0px var(--pip);
+}
+
+.resource {
+  padding-left: 3px;
+}

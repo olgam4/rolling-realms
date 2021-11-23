@@ -1,0 +1,8 @@
+.roller > * {
+  pointer-events: none;
+}
+
+.roller:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}

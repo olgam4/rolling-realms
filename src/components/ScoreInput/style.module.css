@@ -1,0 +1,10 @@
+.scoreInput {
+  display: flex;
+}
+
+.input {
+  width: 30px;
+  style: none;
+  border: none;
+}
+

@@ -1,0 +1,7 @@
+.dice {
+  display: flex;
+}
+
+.dice > div {
+  margin: 10px;
+}

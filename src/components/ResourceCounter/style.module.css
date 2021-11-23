@@ -1,0 +1,18 @@
+.resourceCounter {
+  display: flex;
+}
+
+.modifier {
+  background-color: aqua;
+  user-select: none;
+  height: 14px;
+  width: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modifier:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}

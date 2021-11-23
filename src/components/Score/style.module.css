@@ -1,0 +1,7 @@
+.score {
+  display: flex;
+}
+
+.score > div {
+  margin: 12px;
+}

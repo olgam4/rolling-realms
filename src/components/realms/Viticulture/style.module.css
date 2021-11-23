@@ -1,0 +1,11 @@
+.row {
+  display: flex;
+}
+
+.wines {
+  display: flex;
+}
+
+.row > * {
+  margin: 10px;
+}

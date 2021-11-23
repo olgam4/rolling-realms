@@ -1,0 +1,28 @@
+.roundHeader {
+  display: flex;
+}
+
+.turnsBox {
+  display: flex;
+}
+
+.title {
+  writing-mode: vertical-lr;
+}
+
+.turns {
+  display: flex;
+}
+
+.turns > div {
+  margin: 10px;
+}
+
+.turn {
+  display: flex;
+  margin-top: 10px;
+}
+
+.realms {
+  display: flex;
+}
