@@ -2,7 +2,18 @@ import { useState } from 'react'
 
 import style from './style.module.css'
 
-const DieInput = () => {
+type DieInputProps = {
+  big?: boolean
+}
+
+const pickClassname = (big: boolean) => {
+  if (big) {
+    return style.big
+  }
+  return style.small
+}
+
+const DieInput = ({ big=false }: DieInputProps) => {
   const [score, updateScore] = useState<number | string>('')
 
   const onScoreChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -15,10 +26,12 @@ const DieInput = () => {
     updateScore(intScore)
   }
 
+  const className = pickClassname(big)
+
   return (
     <div>
       <input
-        className={style.input}
+        className={className}
         value={score}
         onChange={onScoreChange}
       />

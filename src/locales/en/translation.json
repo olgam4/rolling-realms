@@ -4,6 +4,7 @@
   "smlogo": "Stonemaier games logo",
   "description": "Select 3 realms per round for all players. On each of 9 turns, roll 2d6 for simultaneous use by all players. Use each die once, each in a different realm—you can’t use the same realm twice on the same turn. Most stars wins.",
   "betweenTwoCastles": "Fill squares from the bottom up; #s on top must be lower than those below. When you complete a column, gain a bonus. Score 1 star per completed row (each castle has 3 rows).",
+  "betweentwocities": "Fill a square; same #s can’t be orthogonally adjacent. Gain a bonus when you complete a row/column. Score stars equal to the lowest of the other 2 realms this round. This # cannot be higher than filled squares here.",
   "charterstone": "Mark either a bonus (note the other rolled die on the crate) or all crates matching the die.",
   "scythe": "Mark a #: The top row provides resources; the bottom row costs resources to gain stars. When you mark a top-row number, you may pay the bottom-row cost in the same column to mark it and gain its star.",
   "viticulture": "Either gain a grape (circle it) OR use the sum of 1 rolled die and at least 1 gained grape (cross it off) to fill a wine order.",

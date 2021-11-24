@@ -26,8 +26,12 @@ const Resource = ({ type, type2, cost=false }: ResourceProps ) => {
   return (
     <div className={style.resource}>
       { cost && <span className={style.cost}>-</span> }
-      {resourceEmoji}
+      <div>
+        {resourceEmoji}
+      </div> 
+      <div className={style.resource2}>
       {resourceEmoji2}
+      </div>
     </div>
   )
 }

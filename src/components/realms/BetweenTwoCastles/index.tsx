@@ -15,32 +15,36 @@ const BetweenTwoCastles = () => {
       <div className={style.castles}>
         <div className={style.castle}>
           <div className={style.tower}>
-            <DieInput />
+            <DieInput big />
             <Resource type="pumpkin" />
           </div>
           <div className={style.tower}>
-            <Door />
-            <DieInput />
-            <DieInput />
+            <div className={style.door}>
+              <Door />
+            </div>
+            <DieInput big />
+            <DieInput big />
             <Resource type="pumpkin" type2="pumpkin" />
           </div>
           <div className={style.tower}>
-            <DieInput />
-            <DieInput />
+            <DieInput big />
+            <DieInput big />
             <Resource type="heart" type2="heart" />
           </div>
         </div>
         <div className={style.castle}>
           <div className={style.tower}>
-            <DieInput />
-            <DieInput />
-            <DieInput />
+            <DieInput big />
+            <DieInput big />
+            <DieInput big />
             <Resource type="coin" type2="heart" />
           </div>
           <div className={style.tower}>
-            <Door />
-            <DieInput />
-            <DieInput />
+            <div className={style.door}>
+              <Door />
+            </div>
+            <DieInput big />
+            <DieInput big />
             <Resource type="coin" type2="coin" />
           </div>
         </div>

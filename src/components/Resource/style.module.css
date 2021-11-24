@@ -1,5 +1,12 @@
 .resource {
   user-select: none;
+  position: relative;
+  display: flex;
+}
+
+.resource2 {
+  position: absolute;
+  left: 10px;
 }
 
 .cost {
