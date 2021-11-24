@@ -35,4 +35,9 @@
 
 .realms {
   display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  margin: 10px;
 }

@@ -1,0 +1,11 @@
+.themeToggler {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  padding: 1em;
+  background: transparent;
+  cursor: pointer;
+  border: 3px solid var(--text-color);
+  border-radius: 5px;
+  z-index: 9999;
+}

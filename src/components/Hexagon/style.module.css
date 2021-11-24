@@ -1,7 +1,8 @@
 .hexagon {
+  background-color: transparent !important;
   position: relative;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border-left: 1px solid var(--text-color);
+  border-right: 1px solid var(--text-color);
   width: 41px;
   display: flex;
   justify-content: center;
@@ -11,24 +12,25 @@
 .hexagon:before {
   content: "";
   position: absolute;
-  z-index: -1;
   width: 30px;
   height: 30px;
   top: -15px;
   transform: scaleY(0.5) rotate(-45deg);
-  border-top: 1px solid black;
-  border-right: 1px solid black;
+  border-top: 1px solid var(--text-color);
+  border-right: 1px solid var(--text-color);
 }
 
 .hexagon:after {
   content: "";
   position: absolute;
-  z-index: -1;
   width: 30px;
   height: 30px;
   bottom: -15px;
   transform: scaleY(0.5) rotate(-45deg);
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
+  border-bottom: 1px solid var(--text-color);
+  border-left: 1px solid var(--text-color);
 }
 
+.content {
+  z-index: 2;
+}

@@ -7,7 +7,9 @@ type HexagonProps = {
 const Hexagon = ({ children }: HexagonProps) => {
   return (
     <div className={style.hexagon}>
-      {children}
+      <div className={style.content}>
+        {children}
+      </div>
     </div>
   )
 }

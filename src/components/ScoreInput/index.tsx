@@ -23,13 +23,16 @@ const ScoreInput = () => {
 
   return (
     <div className={style.scoreInput}>
-      <input 
-        value={score}
-        onChange={onScoreChange}
-        onBlur={onScoreInput}
-        type="text"
-        className={style.input}
-      />
+      <div className={style.customInput}>
+        <input 
+          value={score}
+          onChange={onScoreChange}
+          onBlur={onScoreInput}
+          type="text"
+          className={style.input}
+        />
+        <div className={style.line} />
+      </div>
       <Star disabled />
     </div>
   )

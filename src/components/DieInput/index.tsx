@@ -31,7 +31,7 @@ const DieInput = ({ big=false }: DieInputProps) => {
   return (
     <div>
       <input
-        className={className}
+        className={`${className} ${style.input}`}
         value={score}
         onChange={onScoreChange}
       />

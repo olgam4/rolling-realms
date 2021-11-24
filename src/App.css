@@ -6,3 +6,20 @@
 * {
   font-family: LeagueGothic;
 }
+
+.App {
+  color: var(--text-color);
+  background-color: var(--background);
+  transition: color 0.6s ease,
+              background-color 1s ease;
+}
+
+:root {
+  --background: #f3f3f3;
+  --text-color: #1c1c1c;
+}
+
+[data-theme="dark"] {
+  --background: #121212;
+  --text-color: #bfbfbf;
+}

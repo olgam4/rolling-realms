@@ -2,9 +2,23 @@
   display: flex;
 }
 
+.customInput {
+  position: relative;
+}
+
 .input {
   width: 30px;
   style: none;
   border: none;
+  background-color: transparent;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.line {
+  position: abosulute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-color);
 }
 

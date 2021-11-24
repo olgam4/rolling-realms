@@ -38,7 +38,9 @@ const Round = () => {
       </div>
       <div className={style.realms}>
         <RealmSelector />
+        <div className={style.divider}/>
         <RealmSelector />
+        <div className={style.divider}/>
         <RealmSelector />
       </div>
     </div>
