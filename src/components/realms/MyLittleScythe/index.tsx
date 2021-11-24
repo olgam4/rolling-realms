@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next'
-import HexagonPack from '../../HexagonPack'
 
+import HexagonPack from '../../HexagonPack'
 import Resource from '../../Resource'
-import Score from '../../Score'
 
 import style from './style.module.css'
 
@@ -20,7 +19,6 @@ const MyLittleScythe = () => {
           <Resource type="heart" />
         </HexagonPack>
       </div>
-      <Score />
     </div>
   )
 }

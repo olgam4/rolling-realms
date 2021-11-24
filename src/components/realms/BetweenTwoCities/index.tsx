@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next'
 
 import DieInput from '../../DieInput'
 import Resource from '../../Resource'
-import Score from '../../Score'
 
 import style from './style.module.css'
 
@@ -37,7 +36,6 @@ const BetweenTwoCities = () => {
           <Resource type="heart" type2="pumpkin" />
         </div>
       </div>
-      <Score />
     </div>
   )
 }

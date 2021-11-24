@@ -1,9 +1,6 @@
 .castles {
   display: flex;
-}
-
-.castles > * {
-  margin: 10px;
+  justify-content: space-around;
 }
 
 .castle {

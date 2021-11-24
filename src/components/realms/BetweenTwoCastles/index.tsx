@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next'
 import DieInput from '../../DieInput'
 import Door from '../../Door'
 import Resource from '../../Resource'
-import Score from '../../Score'
 
 import style from './style.module.css'
 
@@ -49,7 +48,6 @@ const BetweenTwoCastles = () => {
           </div>
         </div>
       </div>
-      <Score />
     </div>
   )
 }

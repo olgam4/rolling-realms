@@ -1,7 +1,5 @@
 .score {
   display: flex;
+  justify-content: space-around;
 }
 
-.score > div {
-  margin: 12px;
-}

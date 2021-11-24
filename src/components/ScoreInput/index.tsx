@@ -14,6 +14,10 @@ const ScoreInput = () => {
   const onScoreInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
     const floatScore = parseFloat(event.target.value.replace(',', '.'))
+    if (isNaN(floatScore)) {
+      updateScore('')
+      return
+    }
     updateScore(floatScore)
   }
 

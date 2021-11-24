@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next'
 import Die from '../../Die'
-import Score from '../../Score'
 import Glass from '../../Glass'
 
 import style from './style.module.css'
@@ -23,7 +22,6 @@ const Viticulture = () => {
         <Glass value={11} />
         <Glass value={12} />
       </div>
-      <Score />
     </div>
   )
 }

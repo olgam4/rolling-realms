@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next'
 
 import Die from '../../Die'
 import Resource from '../../Resource'
-import Score from '../../Score'
 import Star from '../../Star'
 
 import style from './style.module.css'
@@ -56,7 +55,6 @@ const Scythe = () => {
           <Star disabled />
         </div>
       </div>
-      <Score />
     </div>
   )
 }

@@ -1,3 +1,17 @@
 .glass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+  text-align: center;
   user-select: none;
+  width: 60px;
+  height: 70px;
+  background-color: #c5aa94;
+  border-radius: 5px;
+}
+
+.stars {
+  display: flex;
+  justify-content: space-around;
 }

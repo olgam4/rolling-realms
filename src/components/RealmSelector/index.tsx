@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import Score from '../Score'
+
 import BetweenTwoCastles from '../realms/BetweenTwoCastles'
 import BetweenTwoCities from '../realms/BetweenTwoCities'
 import Charterstone from '../realms/Charterstone'
@@ -91,7 +93,7 @@ const pickRandomRealm = () => {
 
 const RealmSelector = () => {
   const baseRealm = pickRandomRealm()
-  const [realm, setRealm] = useState<Realms>('mylittlescythe')
+  const [realm, setRealm] = useState<Realms>(baseRealm)
   const [realmChoicesVisible, setRealmChoicesVisible] = useState(false)
 
   const changeRealm = (realm: Realms) => {
@@ -111,6 +113,9 @@ const RealmSelector = () => {
       {realmChoicesVisible && RealmChoices(changeRealm)}
       <div>
         {pickRealmComponent(realm)}
+      </div>
+      <div className={style.score}>
+        <Score />
       </div>
     </div>
   )

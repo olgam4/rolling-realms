@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next'
 
 import Die from '../../Die'
 import Resource from '../../Resource'
-import Score from '../../Score'
 import Star from '../../Star'
 
 import style from './style.module.css'
@@ -44,7 +43,6 @@ const Euphoria = () => {
         <Star requirement="4-10" disabled />
         <Resource type="heart" type2="pumpkin" required="11+" />
       </div>
-    <Score />
     </div>
   )
 }

@@ -1,11 +1,9 @@
 .row {
   display: flex;
+  justify-content: space-around;
 }
 
 .wines {
   display: flex;
-}
-
-.row > * {
-  margin: 10px;
+  justify-content: space-around;
 }

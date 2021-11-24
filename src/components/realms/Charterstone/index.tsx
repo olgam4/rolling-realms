@@ -5,7 +5,6 @@ import DieInput from '../../DieInput'
 import Arrow from '../../Arrow'
 import Box from '../../Box'
 import Star from '../../Star'
-import Score from '../../Score'
 
 import style from './style.module.css'
 
@@ -58,7 +57,6 @@ const Charterstone = () => {
           <Star disabled />
         </div>
       </div>
-      <Score />
     </div>
   )
 }

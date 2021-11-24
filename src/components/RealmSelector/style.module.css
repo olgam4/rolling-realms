@@ -47,3 +47,9 @@
 .realmTitle:hover {
   cursor: pointer;
 }
+
+.score {
+  position: absolute;
+  bottom: 15px;
+  width: 94%;
+}

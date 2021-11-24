@@ -1,7 +1,5 @@
 .dice {
   display: flex;
+  justify-content: space-around;
 }
 
-.dice > div {
-  margin: 10px;
-}
