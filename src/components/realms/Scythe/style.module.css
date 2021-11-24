@@ -1,0 +1,23 @@
+.actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.actions > * {
+  margin-right: 0.5rem;
+}
+
+.action {
+  padding-top: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+}
