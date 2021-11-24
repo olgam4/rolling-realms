@@ -1,6 +1,7 @@
 .roller {
   display: flex;
   align-items: center;
+  user-select: none;
 }
 
 .roller > * {

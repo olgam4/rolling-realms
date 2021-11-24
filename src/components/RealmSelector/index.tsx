@@ -4,12 +4,13 @@ import BetweenTwoCastles from '../realms/BetweenTwoCastles'
 import BetweenTwoCities from '../realms/BetweenTwoCities'
 import Charterstone from '../realms/Charterstone'
 import Euphoria from '../realms/Euphoria'
+import MyLittleScythe from '../realms/MyLittleScythe'
 import Scythe from '../realms/Scythe'
 import Viticulture from '../realms/Viticulture'
 
 import style from './style.module.css'
 
-type Realms = 'viticulture' | 'charterstone' | 'betweentwocastles' | 'scythe' | 'betweentwocities' | 'euphoria'
+type Realms = 'viticulture' | 'charterstone' | 'betweentwocastles' | 'scythe' | 'betweentwocities' | 'euphoria' | 'mylittlescythe'
 
 const pickRealmComponent = (realm: Realms) => {
   switch (realm) {
@@ -25,6 +26,8 @@ const pickRealmComponent = (realm: Realms) => {
       return <BetweenTwoCities />
     case 'euphoria':
       return <Euphoria />
+    case 'mylittlescythe':
+      return <MyLittleScythe />
     default:
       return <div>{realm}</div>
   }
@@ -44,6 +47,8 @@ const pickRealmName = (realm: Realms) => {
       return 'Between Two Cities'
     case 'euphoria':
       return 'Euphoria'
+    case 'mylittlescythe':
+      return 'My Little Scythe'
     default:
       return 'Unknown'
   }
@@ -53,22 +58,25 @@ const RealmChoices = (setRealm: Function) => {
   return (
     <div className={style.realmChoices}>
       <div className={style.realmChoice} onClick={() => setRealm('betweentwocastles')}>
-        Between Two Castles
+        {pickRealmName('betweentwocastles')}
       </div>
       <div className={style.realmChoice} onClick={() => setRealm('betweentwocities')}>
-        Between Two Cities
+        {pickRealmName('betweentwocities')}
       </div>
       <div className={style.realmChoice} onClick={() => setRealm('charterstone')}>
-        Charterstone
+        {pickRealmName('charterstone')}
       </div>
       <div className={style.realmChoice} onClick={() => setRealm('euphoria')}>
-        Euphoria
+        {pickRealmName('euphoria')}
+      </div>
+      <div className={style.realmChoice} onClick={() => setRealm('mylittlescythe')}>
+        {pickRealmName('mylittlescythe')}
       </div>
       <div className={style.realmChoice} onClick={() => setRealm('scythe')}>
-        Scythe
+        {pickRealmName('scythe')}
       </div>
       <div className={style.realmChoice} onClick={() => setRealm('viticulture')}>
-        Viticulture
+        {pickRealmName('viticulture')}
       </div>
     </div>
   )
@@ -76,14 +84,14 @@ const RealmChoices = (setRealm: Function) => {
 }
 
 const pickRandomRealm = () => {
-  const realms: Realms[] = ['betweentwocastles', 'betweentwocities', 'charterstone', 'euphoria', 'scythe', 'viticulture']
+  const realms: Realms[] = ['betweentwocastles', 'betweentwocities', 'charterstone', 'euphoria', 'scythe', 'viticulture', 'mylittlescythe']
   const randomIndex = Math.floor(Math.random() * realms.length)
   return realms[randomIndex]
 }
 
 const RealmSelector = () => {
   const baseRealm = pickRandomRealm()
-  const [realm, setRealm] = useState<Realms>(baseRealm)
+  const [realm, setRealm] = useState<Realms>('mylittlescythe')
   const [realmChoicesVisible, setRealmChoicesVisible] = useState(false)
 
   const changeRealm = (realm: Realms) => {

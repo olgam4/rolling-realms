@@ -1,0 +1,15 @@
+.firstRow {
+  padding-left: 20.5px;
+  display: flex;
+}
+
+.secondRow {
+  display: flex;
+  margin-top: -11px;
+}
+
+.thirdRow {
+  padding-left: 20.5px;
+  display: flex;
+  margin-top: -11px;
+}
