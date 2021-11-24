@@ -5,9 +5,10 @@ import style from './style.module.css'
 type StarProps = {
   disabled?: boolean
   key?: number
+  requirement?: '4-10'
 }
 
-const Star = ({ disabled = false }: StarProps) => {
+const Star = ({ disabled, requirement }: StarProps) => {
   const [isMarked, updateMark] = useState(false)
   
   const mark = () => {
@@ -18,7 +19,10 @@ const Star = ({ disabled = false }: StarProps) => {
   const star = disabled ? '🌟' : isMarked ? '🌟' : '⚫️'
 
   return (
-    <div className={style.star} onClick={mark}>{star}</div>
+    <div className={style.star} onClick={mark}>
+      {requirement}
+      {star}
+    </div>
   )
 }
 

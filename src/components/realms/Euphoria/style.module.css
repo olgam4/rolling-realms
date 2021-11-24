@@ -1,0 +1,17 @@
+.dice {
+  display: flex;
+  justify-content: space-around;
+}
+
+.happy {
+  display: flex;
+}
+
+.sad {
+  display: flex;
+}
+
+.requirements {
+  display: flex;
+  justify-content: space-around;
+}
