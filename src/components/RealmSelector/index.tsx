@@ -75,8 +75,15 @@ const RealmChoices = (setRealm: Function) => {
 
 }
 
+const pickRandomRealm = () => {
+  const realms: Realms[] = ['betweentwocastles', 'betweentwocities', 'charterstone', 'euphoria', 'scythe', 'viticulture']
+  const randomIndex = Math.floor(Math.random() * realms.length)
+  return realms[randomIndex]
+}
+
 const RealmSelector = () => {
-  const [realm, setRealm] = useState<Realms>('euphoria')
+  const baseRealm = pickRandomRealm()
+  const [realm, setRealm] = useState<Realms>(baseRealm)
   const [realmChoicesVisible, setRealmChoicesVisible] = useState(false)
 
   const changeRealm = (realm: Realms) => {
