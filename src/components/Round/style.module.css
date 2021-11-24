@@ -1,5 +1,13 @@
+.round {
+  display: flex;
+  flex-direction: column;
+}
+
 .roundHeader {
   display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .turnsBox {
@@ -8,6 +16,8 @@
 
 .title {
   writing-mode: vertical-lr;
+  display: flex;
+  justify-content: center;
 }
 
 .turns {

@@ -1,1 +1,17 @@
+.realm {
+  height: 320px;
+  width: 320px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.realmTitle {
+  text-transform: uppercase;
+  font-size: 1.6em;
+  text-align: center;
+}

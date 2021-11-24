@@ -1,0 +1,17 @@
+.castles {
+  display: flex;
+}
+
+.castles > * {
+  margin: 10px;
+}
+
+.castle {
+  display: flex;
+  align-items: flex-end;
+}
+
+.tower {
+  display: flex;
+  flex-direction: column-reverse;
+}

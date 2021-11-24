@@ -1,0 +1,49 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header > * {
+  margin: 0 15px;
+}
+
+.smLogo {
+  width: 90px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.author {
+  font-size: 2rem;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.details > * {
+  margin: 0 15px;
+}
+
+.description {
+  width: 400px;
+  text-align: center;
+}
+
+.totalScore {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}

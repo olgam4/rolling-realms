@@ -1,3 +1,8 @@
+.roller {
+  display: flex;
+  align-items: center;
+}
+
 .roller > * {
   pointer-events: none;
 }

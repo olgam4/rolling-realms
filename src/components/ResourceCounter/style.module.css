@@ -1,15 +1,18 @@
 .resourceCounter {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
 }
 
 .modifier {
-  background-color: aqua;
+  background-color: #E69986;
   user-select: none;
-  height: 14px;
-  width: 14px;
+  height: 18px;
+  width: 18px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .modifier:hover {
