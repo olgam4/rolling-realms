@@ -1,4 +1,5 @@
 import Game from './components/Game'
+import Footer from './components/Footer'
 
 import './App.css'
 
@@ -9,6 +10,7 @@ function App() {
       </header>
       <div>
         <Game />
+        <Footer />
       </div>
     </div>
   );

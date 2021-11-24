@@ -12,7 +12,7 @@ const Game = () => {
     <div className={style.game}>
       <div>
         <div className={style.header}>
-          <img className={style.smLogo} src={stonemaierLogo} />
+          <img className={style.smLogo} src={stonemaierLogo} alt={t('smlogo')}/>
           <div className={style.title}>{t('title')}</div>
           <div className={style.author}>{t('author')}</div>
         </div>
