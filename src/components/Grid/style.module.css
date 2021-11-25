@@ -1,0 +1,64 @@
+.starsTop {
+  display: flex;
+}
+
+.starsTop > * {
+  margin: 0px 13px;
+}
+
+.starsRight > * {
+  margin: 14px 4px;
+}
+
+.square {
+  display: flex;
+  position: relative;
+  background-color: transparent;
+}
+
+.corner {
+  width: 20px;
+  height: 20px;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+}
+
+.corner:hover {
+  background-color: rgba(255, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.corner.marked {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.corner.marked:hover {
+  opacity: 0.5;
+}
+
+.corner.disabled,
+.corner.disabled:hover {
+  background-color: rgba(255, 0, 0, 0.6);
+  cursor: default;
+}
+
+.resource {
+  position: absolute;
+  background-color: transparent;
+  z-index: -1;
+  border: 3px solid var(--text-color);
+  padding: 7px 10px;
+}
+
+.gridRows {
+  display: flex;
+  background-color: transparent;
+}
+
+.gridColumn {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  position: relative;
+  z-index: 0;
+}

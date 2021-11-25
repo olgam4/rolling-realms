@@ -1,0 +1,10 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pattern {
+  height: 130px;
+  align-self: flex-end;
+}

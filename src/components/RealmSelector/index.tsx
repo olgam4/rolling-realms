@@ -8,12 +8,13 @@ import Charterstone from '../realms/Charterstone'
 import Euphoria from '../realms/Euphoria'
 import MyLittleScythe from '../realms/MyLittleScythe'
 import Scythe from '../realms/Scythe'
+import Tapestry from '../realms/Tapestry'
 import Viticulture from '../realms/Viticulture'
 import Wingspan from '../realms/Wingpsan'
 
 import style from './style.module.css'
 
-type Realms = 'viticulture' | 'charterstone' | 'betweentwocastles' | 'scythe' | 'betweentwocities' | 'euphoria' | 'mylittlescythe' | 'wingspan'
+type Realms = 'viticulture' | 'charterstone' | 'betweentwocastles' | 'scythe' | 'betweentwocities' | 'euphoria' | 'mylittlescythe' | 'wingspan' | 'tapestry'
 
 const pickRealmComponent = (realm: Realms) => {
   switch (realm) {
@@ -33,6 +34,8 @@ const pickRealmComponent = (realm: Realms) => {
       return <MyLittleScythe />
     case 'wingspan':
       return <Wingspan />
+      case 'tapestry':
+      return <Tapestry />
     default:
       return <div>{realm}</div>
   }
@@ -56,6 +59,8 @@ const pickRealmName = (realm: Realms) => {
       return 'My Little Scythe'
     case 'wingspan':
       return 'Wingspan'
+    case 'tapestry':
+      return 'Tapestry'
     default:
       return 'Unknown'
   }
@@ -77,6 +82,7 @@ const RealmChoices = (setRealm: Function) => {
       {renderRealmChoice('euphoria')}
       {renderRealmChoice('mylittlescythe')}
       {renderRealmChoice('scythe')}
+      {renderRealmChoice('tapestry')}
       {renderRealmChoice('viticulture')}
       {renderRealmChoice('wingspan')}
     </div>
@@ -85,7 +91,7 @@ const RealmChoices = (setRealm: Function) => {
 }
 
 const pickRandomRealm = () => {
-  const realms: Realms[] = ['betweentwocastles', 'betweentwocities', 'charterstone', 'euphoria', 'scythe', 'viticulture', 'mylittlescythe', 'wingspan']
+  const realms: Realms[] = ['betweentwocastles', 'betweentwocities', 'charterstone', 'euphoria', 'scythe', 'viticulture', 'mylittlescythe', 'wingspan', 'tapestry']
   const randomIndex = Math.floor(Math.random() * realms.length)
   return realms[randomIndex]
 }
@@ -115,9 +121,7 @@ const RealmSelector = ({ incrementScore, decrementScore }: Props) => {
         {pickRealmName(realm)}
       </div>
       {realmChoicesVisible && RealmChoices(changeRealm)}
-      <div>
-        {pickRealmComponent(realm)}
-      </div>
+      {pickRealmComponent(realm)}
       <div className={style.score}>
         <Score incrementScore={incrementScore} decrementScore={decrementScore} />
       </div>

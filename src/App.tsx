@@ -14,11 +14,9 @@ function App() {
 
   return (
     <div className="App" data-theme={theme}>
-      <div>
-        <Game />
-        <Footer />
-        <ThemeToggler theme={theme} toggleTheme={toggleTheme} />
-      </div>
+      <Game />
+      <Footer />
+      <ThemeToggler theme={theme} toggleTheme={toggleTheme} />
     </div>
   );
 }
