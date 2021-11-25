@@ -3,8 +3,11 @@ import { useTranslation } from 'react-i18next'
 import DieInput from '../DieInput'
 import DieRandomizer from '../DieRandomizer'
 import RealmSelector from '../RealmSelector'
+import { ResourceProps } from '../Resource'
 import ResourceCounter from '../ResourceCounter'
 import ScoreInput from '../ScoreInput'
+
+import { useRoundScore } from './hooks'
 
 import style from './style.module.css'
 
@@ -13,14 +16,29 @@ type RoundProps = {
 }
 
 const Round = ({ number }: RoundProps) => {
+  const {
+    score,
+    incrementScore,
+    decrementScore,
+    advanceScore,
+    backScore
+  } = useRoundScore(0)
   const { t } = useTranslation()
+
+  const renderResourceCounter = (resource: ResourceProps['type']) => (
+    <ResourceCounter
+      resource={resource}
+      incrementScore={advanceScore}
+      decrementScore={backScore}
+    />
+  )
 
   return (
     <div className={style.round}>
       <div className={style.roundHeader}>
         <div className={style.roundInfo}>
           {`${t('round')} ${number}`}
-          <ScoreInput />
+          <ScoreInput score={score} disabled />
         </div>
         <div className={style.turnsBox}>
           <div className={style.title}>{t('turns')}</div>
@@ -43,16 +61,16 @@ const Round = ({ number }: RoundProps) => {
           </div>
         </div>
         <DieRandomizer />
-        <ResourceCounter resource="pumpkin" />
-        <ResourceCounter resource="heart" />
-        <ResourceCounter resource="coin" />
+        {renderResourceCounter('pumpkin')}
+        {renderResourceCounter('heart')}
+        {renderResourceCounter('coin')}
       </div>
       <div className={style.realms}>
-        <RealmSelector />
+        <RealmSelector incrementScore={incrementScore} decrementScore={decrementScore} />
         <div className={style.divider}/>
-        <RealmSelector />
+        <RealmSelector incrementScore={incrementScore} decrementScore={decrementScore} />
         <div className={style.divider}/>
-        <RealmSelector />
+        <RealmSelector incrementScore={incrementScore} decrementScore={decrementScore} />
       </div>
     </div>
   )

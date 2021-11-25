@@ -5,18 +5,26 @@ import style from './style.module.css'
 
 type ResourceCounterProps = {
   resource: ResourceProps['type']
+  incrementScore: () => void
+  decrementScore: () => void
 }
 
-const ResourceCounter = ({ resource }: ResourceCounterProps) => {
+const ResourceCounter = ({
+  incrementScore,
+  decrementScore,
+  resource
+}: ResourceCounterProps) => {
   const [total, setTotal] = useState(0)
 
   const handleIncrement = () => {
     setTotal(total + 1)
+    incrementScore()
   }
 
   const handleDecrement = () => {
     if (total === 0) return
     setTotal(total - 1)
+    decrementScore()
   }
 
   return (

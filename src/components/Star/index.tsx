@@ -4,16 +4,19 @@ import style from './style.module.css'
 
 type StarProps = {
   disabled?: boolean
-  key?: number
   requirement?: '4-10'
+  onMark?: () => void
+  onDemark?: () => void
 }
 
-const Star = ({ disabled, requirement }: StarProps) => {
+const Star = ({ disabled, requirement, onMark, onDemark }: StarProps) => {
   const [isMarked, updateMark] = useState(false)
   
   const mark = () => {
     if (disabled) return
+    isMarked ? onDemark && onDemark() : onMark && onMark()
     updateMark(!isMarked)
+
   }
 
   const star = disabled ? '🌟' : isMarked ? '🌟' : '⚫️'

@@ -3,8 +3,14 @@ import Star from '../Star'
 
 import style from './style.module.css'
 
-const ScoreInput = () => {
-  const [score, updateScore] = useState<number | string>('')
+type Props = {
+  score?: number
+  disabled?: boolean
+}
+
+const ScoreInput = ({ score, disabled }: Props) => {
+  const defaultScore = disabled ? score : ''
+  const [inputScore, updateScore] = useState<number | string>(defaultScore || '')
 
   const onScoreChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
@@ -24,13 +30,16 @@ const ScoreInput = () => {
   return (
     <div className={style.scoreInput}>
       <div className={style.customInput}>
-        <input 
-          value={score}
-          onChange={onScoreChange}
-          onBlur={onScoreInput}
-          type="text"
-          className={style.input}
-        />
+        {disabled ?
+          <div className={style.score}>{score?.toFixed(1)}</div>:
+          <input 
+            value={inputScore}
+            onChange={onScoreChange}
+            onBlur={onScoreInput}
+            type="text"
+            className={style.input}
+          />
+        }
         <div className={style.line} />
       </div>
       <Star disabled />

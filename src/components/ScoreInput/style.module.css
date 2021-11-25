@@ -6,6 +6,12 @@
   position: relative;
 }
 
+.score {
+  width: 30px;
+  text-align: center;
+  color: var(--text-color);
+}
+
 .input {
   width: 30px;
   style: none;

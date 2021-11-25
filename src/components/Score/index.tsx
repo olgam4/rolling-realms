@@ -1,15 +1,23 @@
+import { times } from 'lodash'
+
 import Star from '../Star'
 
 import style from './style.module.css'
 
-const Score = () => {
-  const stars = []
-  for (let i = 0; i < 6; i++) {
-    stars.push(<Star key={i} />)
-  }
+type Props = {
+  incrementScore: () => void
+  decrementScore: () => void
+}
+
+const Score = ({ incrementScore, decrementScore }: Props) => {
   return (
     <div className={`${style.score}`}>
-      {stars}
+      {times(6, () => (
+        <Star
+          onMark={incrementScore}
+          onDemark={decrementScore}
+        />
+      ))}
     </div>
   )
 }
