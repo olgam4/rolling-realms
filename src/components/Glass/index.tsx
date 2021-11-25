@@ -1,3 +1,5 @@
+import { times } from 'lodash'
+
 import Star from '../Star'
 
 import style from './style.module.css'
@@ -11,8 +13,7 @@ const Glass = ({ value }: GlassProps) => {
     <div className={style.glass}>
       {`${value} 🍷`}
       <div className={style.stars}>
-        <Star disabled />
-        <Star disabled />
+        {times(2, () =><Star disabled />)}
       </div>
     </div>
   )

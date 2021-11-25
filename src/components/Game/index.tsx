@@ -1,3 +1,4 @@
+import { times } from 'lodash'
 import { useTranslation } from 'react-i18next'
 
 import Round from '../Round'
@@ -23,9 +24,7 @@ const Game = () => {
           </div>
         </div>
       </div>
-      <Round />
-      <Round />
-      <Round />
+      {times(3, (i) => <Round number={i + 1} />)}
     </div>
   )
 }

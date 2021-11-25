@@ -1,4 +1,6 @@
+import { times } from 'lodash'
 import { useTranslation } from 'react-i18next'
+
 import Die from '../../Die'
 import Glass from '../../Glass'
 
@@ -18,9 +20,9 @@ const Viticulture = () => {
         <Die resource="pumpkin" value={6} />
       </div>
       <div className={style.wines}>
-        <Glass value={10} />
-        <Glass value={11} />
-        <Glass value={12} />
+        {times(3, (i) => (
+          <Glass value={i + 10} />
+        ))}
       </div>
     </div>
   )

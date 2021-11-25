@@ -1,18 +1,29 @@
-import ScoreInput from '../ScoreInput'
-import DieRandomizer from '../DieRandomizer'
+import { useTranslation } from 'react-i18next'
+
 import DieInput from '../DieInput'
-import ResourceCounter from '../ResourceCounter'
+import DieRandomizer from '../DieRandomizer'
 import RealmSelector from '../RealmSelector'
+import ResourceCounter from '../ResourceCounter'
+import ScoreInput from '../ScoreInput'
 
 import style from './style.module.css'
 
-const Round = () => {
+type RoundProps = {
+  number: number
+}
+
+const Round = ({ number }: RoundProps) => {
+  const { t } = useTranslation()
+
   return (
     <div className={style.round}>
       <div className={style.roundHeader}>
-        <ScoreInput />
+        <div className={style.roundInfo}>
+          {`${t('round')} ${number}`}
+          <ScoreInput />
+        </div>
         <div className={style.turnsBox}>
-          <div className={style.title}>TURNS</div>
+          <div className={style.title}>{t('turns')}</div>
           <div className={style.turns}>
             <div>
               <div className={style.turn}>1 <DieInput /><DieInput /></div>
