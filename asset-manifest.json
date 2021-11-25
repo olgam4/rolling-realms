@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/rolling-realms/static/css/main.7816b33c.chunk.css",
-    "main.js": "/rolling-realms/static/js/main.dfe637e8.chunk.js",
-    "main.js.map": "/rolling-realms/static/js/main.dfe637e8.chunk.js.map",
+    "main.js": "/rolling-realms/static/js/main.5a47ab60.chunk.js",
+    "main.js.map": "/rolling-realms/static/js/main.5a47ab60.chunk.js.map",
     "runtime-main.js": "/rolling-realms/static/js/runtime-main.1bdf4e4f.js",
     "runtime-main.js.map": "/rolling-realms/static/js/runtime-main.1bdf4e4f.js.map",
     "static/js/2.95ec408c.chunk.js": "/rolling-realms/static/js/2.95ec408c.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.1bdf4e4f.js",
     "static/js/2.95ec408c.chunk.js",
     "static/css/main.7816b33c.chunk.css",
-    "static/js/main.dfe637e8.chunk.js"
+    "static/js/main.5a47ab60.chunk.js"
   ]
 }
