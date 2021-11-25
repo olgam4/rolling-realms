@@ -1,0 +1,9 @@
+.hexagons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hourglasses {
+  display: flex;
+  justify-content: space-around;
+}

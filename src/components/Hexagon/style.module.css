@@ -34,3 +34,67 @@
 .content {
   z-index: 2;
 }
+
+
+.hexagon.interactive {
+  border-style: dashed;
+  border-top: none;
+  border-bottom: none;
+}
+
+.hexagon.interactive:hover {
+  border-style: solid;
+  border-top: none;
+  border-bottom: none;
+  cursor: pointer;
+}
+
+.hexagon.interactive:before {
+  border-style: dashed;
+  border-bottom: none;
+  border-left: none;
+}
+
+.hexagon.interactive:hover:before {
+  border-style: solid;
+  border-bottom: none;
+  border-left: none;
+  cursor: pointer;
+}
+
+.hexagon.interactive:after {
+  border-style: dashed;
+  border-top: none;
+  border-right: none;
+}
+
+.hexagon.interactive:hover:after {
+  border-style: solid;
+  border-top: none;
+  border-right: none;
+  cursor: pointer;
+}
+
+.hexagon.interactive.marked {
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
+  border-top: none;
+  border-bottom: none;
+}
+
+.hexagon.interactive.marked:before {
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
+  border-bottom: none;
+  border-left: none;
+}
+
+.hexagon.interactive.marked:after {
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
+  border-top: none;
+  border-right: none;
+}

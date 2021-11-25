@@ -7,6 +7,7 @@ import BetweenTwoCities from '../realms/BetweenTwoCities'
 import Charterstone from '../realms/Charterstone'
 import Euphoria from '../realms/Euphoria'
 import MyLittleScythe from '../realms/MyLittleScythe'
+import Pendulum from '../realms/Pendulum'
 import Scythe from '../realms/Scythe'
 import Tapestry from '../realms/Tapestry'
 import Viticulture from '../realms/Viticulture'
@@ -14,7 +15,7 @@ import Wingspan from '../realms/Wingpsan'
 
 import style from './style.module.css'
 
-type Realms = 'viticulture' | 'charterstone' | 'betweentwocastles' | 'scythe' | 'betweentwocities' | 'euphoria' | 'mylittlescythe' | 'wingspan' | 'tapestry'
+type Realms = 'viticulture' | 'charterstone' | 'betweentwocastles' | 'scythe' | 'betweentwocities' | 'euphoria' | 'mylittlescythe' | 'wingspan' | 'tapestry' | 'pendulum'
 
 const pickRealmComponent = (realm: Realms) => {
   switch (realm) {
@@ -34,8 +35,10 @@ const pickRealmComponent = (realm: Realms) => {
       return <MyLittleScythe />
     case 'wingspan':
       return <Wingspan />
-      case 'tapestry':
+    case 'tapestry':
       return <Tapestry />
+    case 'pendulum':
+      return <Pendulum />
     default:
       return <div>{realm}</div>
   }
@@ -61,6 +64,8 @@ const pickRealmName = (realm: Realms) => {
       return 'Wingspan'
     case 'tapestry':
       return 'Tapestry'
+    case 'pendulum':
+      return 'Pendulum'
     default:
       return 'Unknown'
   }
@@ -81,6 +86,7 @@ const RealmChoices = (setRealm: Function) => {
       {renderRealmChoice('charterstone')}
       {renderRealmChoice('euphoria')}
       {renderRealmChoice('mylittlescythe')}
+      {renderRealmChoice('pendulum')}
       {renderRealmChoice('scythe')}
       {renderRealmChoice('tapestry')}
       {renderRealmChoice('viticulture')}
@@ -91,7 +97,7 @@ const RealmChoices = (setRealm: Function) => {
 }
 
 const pickRandomRealm = () => {
-  const realms: Realms[] = ['betweentwocastles', 'betweentwocities', 'charterstone', 'euphoria', 'scythe', 'viticulture', 'mylittlescythe', 'wingspan', 'tapestry']
+  const realms: Realms[] = ['betweentwocastles', 'betweentwocities', 'charterstone', 'euphoria', 'scythe', 'viticulture', 'mylittlescythe', 'wingspan', 'tapestry', 'pendulum']
   const randomIndex = Math.floor(Math.random() * realms.length)
   return realms[randomIndex]
 }
