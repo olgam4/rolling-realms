@@ -1,9 +1,13 @@
 import { useState } from 'react'
 
+import Resource, { ResourceProps } from '../Resource'
+import Star from '../Star'
+
 import style from './style.module.css'
 
 type DieInputProps = {
   big?: boolean
+  resource?: ResourceProps['type'] | 'star'
 }
 
 const pickClassname = (big: boolean) => {
@@ -13,7 +17,7 @@ const pickClassname = (big: boolean) => {
   return style.small
 }
 
-const DieInput = ({ big=false }: DieInputProps) => {
+const DieInput = ({ big=false, resource }: DieInputProps) => {
   const [score, updateScore] = useState<number | string>('')
 
   const onScoreChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,12 +33,19 @@ const DieInput = ({ big=false }: DieInputProps) => {
   const className = pickClassname(big)
 
   return (
-    <div>
+    <div className={style.dieInput}>
       <input
         className={`${className} ${style.input}`}
         value={score}
         onChange={onScoreChange}
       />
+      <div className={style.resource}>
+        {resource !== undefined? resource === 'star'?
+          <Star disabled /> :
+          <Resource type={resource} />
+          : null
+        }
+      </div>
     </div>
   )
 }

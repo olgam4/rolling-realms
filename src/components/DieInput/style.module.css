@@ -13,3 +13,8 @@
   width: 15px;
   height: 15px;
 }
+
+.resource {
+  text-align: center;
+  padding-left: 3px;
+}
