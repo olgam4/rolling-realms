@@ -1,0 +1,19 @@
+.languageSelector {
+  position: fixed;
+  top: 5px;
+  right: 70px;
+  padding: 0.54em;
+  background-color: var(--background);
+  border: 3px solid var(--text-color);
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.languageSelector > select {
+  width: 100%;
+  padding: 0.5em;
+  border: none;
+  background: transparent;
+  color: var(--text-color);
+}
+

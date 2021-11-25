@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import ThemeToggler from './components/ThemeToggler';
 
 import './App.css'
+import LanguageSelector from './components/LanguageSelector';
 
 function App() {
   const [theme, setTheme] = useState('light')
@@ -17,6 +18,7 @@ function App() {
       <Game />
       <Footer />
       <ThemeToggler theme={theme} toggleTheme={toggleTheme} />
+      <LanguageSelector />
     </div>
   );
 }
