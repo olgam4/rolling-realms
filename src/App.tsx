@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 
 import Game from './components/Game'
 import Footer from './components/Footer'
-import ThemeToggler from './components/ThemeToggler';
+import LanguageSelector from './components/togglers/LanguageSelector'
+import ThemeToggler from './components/togglers/ThemeToggler'
+import RulesToggler from './components/togglers/RulesToggler'
 
 import './App.css'
-import LanguageSelector from './components/LanguageSelector';
 
 function App() {
   const [theme, setTheme] = useState('light')
@@ -14,12 +15,15 @@ function App() {
   }
 
   return (
-    <div className="App" data-theme={theme}>
-      <Game />
-      <Footer />
-      <ThemeToggler theme={theme} toggleTheme={toggleTheme} />
-      <LanguageSelector />
-    </div>
+    <Suspense fallback={<div/>}>
+      <div className="App" data-theme={theme}>
+        <Game />
+        <Footer />
+        <ThemeToggler theme={theme} toggleTheme={toggleTheme} />
+        <RulesToggler />
+        <LanguageSelector />
+      </div>
+    </Suspense>
   );
 }
 

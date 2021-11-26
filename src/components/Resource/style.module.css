@@ -12,4 +12,6 @@
 .cost {
   color: #f00;
   font-size: 1.8em;
+  position: relative;
+  top: -4px;
 }

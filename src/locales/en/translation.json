@@ -21,5 +21,19 @@
   "copyright": "This project is not affiliated with StonemaierGames and is open source",
   "github": "Contribute on Github",
   "french": "Français",
-  "english": "English"
+  "english": "English",
+  "rules": {
+    "title": "Rules",
+    "drag": "(Drag to move)",
+    "pumpkin2": "x2: adjust a die ±1",
+    "pumpkin3": "x3: adjust a die ±1; use it in a realm you've already used this turn",
+    "heart2": "x2: reuse a die if the non-adjusted dice shows a pair",
+    "heart3": "x3: reuse a die",
+    "coin2": "x2: reuse a die if the non-adjusted dice sum is 7",
+    "coinX": "X: gain a die of value X (1-6)",
+    "reuse": "Reuse and extra dice can't be used in the same realm on the same turn",
+    "original": "Reuse dice as they were originally rolled",
+    "earned": "Earned but unsued resources are woth 0.1 stars each",
+    "resourcesround": "Unused resources do not carry over to the next round"
+  }
 }

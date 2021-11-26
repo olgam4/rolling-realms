@@ -21,5 +21,19 @@
   "copyright": "Ce projet n'est pas affilié à StonemaierGames et est open source",
   "github": "Contribuez sur Github",
   "french": "Français",
-  "english": "English"
+  "english": "English",
+  "rules": {
+    "title": "Règles",
+    "drag": "(Glisser pour déplacer)",
+    "pumpkin2": "x2 : ajuste un dé ±1",
+    "pumpkin3": "x3 ajuste un dé ±1; peut être utilisé dans un royaume que vous avez déjà utilisé ce tour",
+    "heart2": "x2:  réutilise un dé si les dés non-ajustés montrent une paire",
+    "heart3": "x3: réutilise un dé",
+    "coin2": "x2: réutilise un dé si la somme des dés non-ajustés est égale à 7",
+    "coinX": "X: gagne un dé de valeur X (1-6)",
+    "reuse": "Les dés réutilisés et supplémentaires ne peuvent pas être utilisés dans un même royaume dans le même tour",
+    "original": "Réutilisez les dés comme ils ont été lancés",
+    "earned": "Les ressources gagnées mais non utilisées valent 0.1 étoiles chacune",
+    "resourcesround": "Les ressources non utilisées ne sont pas prises en compte pour la prochaine manche"
+  }
 }
