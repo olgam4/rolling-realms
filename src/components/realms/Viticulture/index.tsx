@@ -21,7 +21,7 @@ const Viticulture = () => {
       </div>
       <div className={style.wines}>
         {times(3, (i) => (
-          <Glass value={i + 10} />
+          <Glass value={i + 10} key={i} />
         ))}
       </div>
     </div>

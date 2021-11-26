@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { times } from 'lodash'
 import { useTranslation } from 'react-i18next'
 
 import Resource, { ResourceProps } from '../Resource'

@@ -13,7 +13,7 @@ const Glass = ({ value }: GlassProps) => {
     <div className={style.glass}>
       {`${value} 🍷`}
       <div className={style.stars}>
-        {times(2, () =><Star disabled />)}
+        {times(2, (i) =><Star disabled key={i} />)}
       </div>
     </div>
   )

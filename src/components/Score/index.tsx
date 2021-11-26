@@ -12,10 +12,11 @@ type Props = {
 const Score = ({ incrementScore, decrementScore }: Props) => {
   return (
     <div className={`${style.score}`}>
-      {times(6, () => (
+      {times(6, (i) => (
         <Star
           onMark={incrementScore}
           onDemark={decrementScore}
+          key={i}
         />
       ))}
     </div>

@@ -11,10 +11,10 @@ type HexagonPackProps = {
 
 const HexagonPack = ({ children }: HexagonPackProps) => {
   const renderRow = (data: Array<number | ReactElement>) => {
-    return data.map((value) => (
-      <Hexagon>
+    return data.map((value, i) => (
+      <Hexagon key={`hex-${i}`}>
         {typeof value === 'number' ?
-          <Die value={value} /> :
+          <Die value={value} key={`hex-${i}-die-${i}`} /> :
           children
         }
       </Hexagon>

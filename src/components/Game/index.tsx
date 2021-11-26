@@ -24,7 +24,7 @@ const Game = () => {
           </div>
         </div>
       </div>
-      {times(3, (i) => <Round number={i + 1} />)}
+      {times(3, (i) => <Round number={i + 1} key={i} />)}
     </div>
   )
 }

@@ -22,8 +22,8 @@ const Wingspan = () => {
     <div className={style.bird}>
       {bird} {wingspan}
       <div className={style.dice}>
-        {resources.map((resource) => (
-          <DieInput resource={resource} />
+        {resources.map((resource, i) => (
+          <DieInput resource={resource} key={i} />
         ))}
         <DieInput resource="star" />
       </div>

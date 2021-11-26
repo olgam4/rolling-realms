@@ -49,7 +49,7 @@ const Grid = () => {
   return (
     <div>
       <div className={style.starsTop}>
-        {times(3, () => (<Star disabled />))}
+        {times(3, (i) => (<Star disabled key={i} />))}
       </div>
       <div className={style.gridRows}>
         <div className={style.gridColumn}>
@@ -68,7 +68,7 @@ const Grid = () => {
           {renderSquare('pumpkin', 'none')}
         </div>
         <div className={style.starsRight}>
-          {times(3, () => (<Star disabled />))}
+          {times(3, (i) => (<Star disabled key={i} />))}
         </div>
       </div>
     </div>

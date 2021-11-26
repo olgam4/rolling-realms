@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react'
+import { Suspense } from 'react'
 
 import Game from './components/Game'
 import Footer from './components/Footer'

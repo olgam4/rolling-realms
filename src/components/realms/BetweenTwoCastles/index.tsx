@@ -27,7 +27,7 @@ const BetweenTwoCastles = () => {
             <div className={style.door}>
               <Door />
             </div>}
-          {times(height, () => (<DieInput big />))}
+          {times(height, (i) => (<DieInput big key={i} />))}
           <Resource type={resource1} type2={resource2} />
         </div>
       )

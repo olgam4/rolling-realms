@@ -10,8 +10,8 @@ const renderResources = (resources: ResourceProps['type'][]) => {
   return (
     <div className={style.resourceRow}>
       <Arrow right />
-      {resources.map((resource) => (
-        <Resource type={resource} />
+      {resources.map((resource, i) => (
+        <Resource type={resource} key={i} />
       ))}
     </div>
   )
