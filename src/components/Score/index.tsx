@@ -1,15 +1,17 @@
 import { times } from 'lodash'
+import useScore from '../../hooks/useScore'
 
 import Star from '../Star'
 
 import style from './style.module.css'
 
 type Props = {
-  incrementScore: () => void
-  decrementScore: () => void
+  roundNumber: 1 | 2 | 3
 }
 
-const Score = ({ incrementScore, decrementScore }: Props) => {
+const Score = ({ roundNumber }: Props) => {
+  const { decrementScore, incrementScore } = useScore(roundNumber)
+
   return (
     <div className={`${style.score}`}>
       {times(6, (i) => (

@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import MenuToggler from './components/togglers/MenuToggler'
 
 import './App.css'
+import { ScoreProvider } from './hooks/useScore'
 
 function App() {
   const { theme } = useTheme()
@@ -14,7 +15,9 @@ function App() {
   return (
     <Suspense fallback={<div/>}>
       <div className="App" data-theme={theme}>
-        <Game />
+        <ScoreProvider>
+          <Game />
+        </ScoreProvider>
         <Footer />
         <MenuToggler />
       </div>

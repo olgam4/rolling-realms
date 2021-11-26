@@ -109,11 +109,10 @@ const pickRandomRealm = () => {
 }
 
 type Props = {
-  incrementScore: () => void
-  decrementScore: () => void
+  roundNumber: 1 | 2 | 3
 }
 
-const RealmSelector = ({ incrementScore, decrementScore }: Props) => {
+const RealmSelector = ({ roundNumber }: Props) => {
   const baseRealm = pickRandomRealm()
   const [realm, setRealm] = useState<Realms>(baseRealm)
   const [realmChoicesVisible, setRealmChoicesVisible] = useState(false)
@@ -135,7 +134,7 @@ const RealmSelector = ({ incrementScore, decrementScore }: Props) => {
       {realmChoicesVisible && RealmChoices(changeRealm)}
       {pickRealmComponent(realm)}
       <div className={style.score}>
-        <Score incrementScore={incrementScore} decrementScore={decrementScore} />
+        <Score roundNumber={roundNumber} />
       </div>
     </div>
   )

@@ -1,24 +1,24 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import useScore from '../../hooks/useScore'
 
 import Resource, { ResourceProps } from '../Resource'
 
 import style from './style.module.css'
 
-type ResourceCounterProps = {
+type Props = {
   resource: ResourceProps['type']
-  incrementScore: () => void
-  decrementScore: () => void
-  resetScore: () => void
+  roundNumber: 1 | 2 | 3
 }
 
-const ResourceCounter = ({
-  incrementScore,
-  decrementScore,
-  resetScore,
-  resource
-}: ResourceCounterProps) => {
+const ResourceCounter = ({ resource, roundNumber }: Props) => {
   const { t } = useTranslation()
+  const {
+    bumpScore,
+    reduceScore,
+    resetScore,
+  } = useScore(roundNumber)
+
   const [current, setCurrent] = useState(0)
   const [total, setTotal] = useState(0)
   const [asking, setAsking] = useState(false)
@@ -26,13 +26,13 @@ const ResourceCounter = ({
   const handleIncrement = () => {
     setCurrent(current + 1)
     setTotal(total + 1)
-    incrementScore()
+    bumpScore()
   }
 
   const handleDecrement = () => {
     if (current === 0) return
     setCurrent(current - 1)
-    decrementScore()
+    reduceScore()
   }
 
   const askIfSure = () => {
@@ -40,7 +40,7 @@ const ResourceCounter = ({
   }
 
   const thenReset = () => {
-    resetScore()
+    resetScore(current * 0.1)
     setCurrent(0)
     setTotal(0)
     setAsking(false)

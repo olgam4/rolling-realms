@@ -1,11 +1,10 @@
-import { times } from 'lodash'
 import { useTranslation } from 'react-i18next'
 
 import Round from '../Round'
-import stonemaierLogo from '../../images/stonemaier-logo.png'
-
-import style from './style.module.css'
 import ScoreInput from '../ScoreInput'
+
+import stonemaierLogo from '../../images/stonemaier-logo.png'
+import style from './style.module.css'
 
 const Game = () => {
   const { t } = useTranslation()
@@ -20,11 +19,13 @@ const Game = () => {
         <div className={style.details}>
           <div className={style.description}>{t('description')}</div>
           <div className={style.totalScore}>
-            <ScoreInput />
+            <ScoreInput disabled />
           </div>
         </div>
       </div>
-      {times(3, (i) => <Round number={i + 1} key={i} />)}
+      <Round number={1} />
+      <Round number={2} />
+      <Round number={3} />
     </div>
   )
 }

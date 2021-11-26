@@ -1,16 +1,19 @@
 import { useState } from 'react'
+
+import useScore from '../../hooks/useScore'
+
 import Star from '../Star'
 
 import style from './style.module.css'
 
 type Props = {
-  score?: number
   disabled?: boolean
+  roundNumber?: 1 | 2 | 3
 }
 
-const ScoreInput = ({ score, disabled }: Props) => {
-  const defaultScore = disabled ? score : ''
-  const [inputScore, updateScore] = useState<number | string>(defaultScore || '')
+const ScoreInput = ({ disabled, roundNumber }: Props) => {
+  const { score } = useScore(roundNumber)
+  const [inputScore, updateScore] = useState<number | string>(score)
 
   const onScoreChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
@@ -31,7 +34,7 @@ const ScoreInput = ({ score, disabled }: Props) => {
     <div className={style.scoreInput}>
       <div className={style.customInput}>
         {disabled ?
-          <div className={style.score}>{score?.toFixed(1)}</div>:
+          <div className={style.score}>{Math.abs(score).toFixed(1)}</div>:
           <input 
             value={inputScore}
             onChange={onScoreChange}

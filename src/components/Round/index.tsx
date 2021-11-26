@@ -7,31 +7,19 @@ import { ResourceProps } from '../Resource'
 import ResourceCounter from '../ResourceCounter'
 import ScoreInput from '../ScoreInput'
 
-import { useRoundScore } from './hooks'
-
 import style from './style.module.css'
 
 type RoundProps = {
-  number: number
+  number: 1 | 2 | 3
 }
 
 const Round = ({ number }: RoundProps) => {
-  const {
-    score,
-    incrementScore,
-    decrementScore,
-    advanceScore,
-    backScore,
-    resetScore,
-  } = useRoundScore(0)
   const { t } = useTranslation()
 
   const renderResourceCounter = (resource: ResourceProps['type']) => (
     <ResourceCounter
+      roundNumber={number}
       resource={resource}
-      incrementScore={advanceScore}
-      decrementScore={backScore}
-      resetScore={resetScore}
     />
   )
 
@@ -40,7 +28,7 @@ const Round = ({ number }: RoundProps) => {
       <div className={style.roundHeader}>
         <div className={style.roundInfo}>
           {`${t('round')} ${number}`}
-          <ScoreInput score={score} disabled />
+          <ScoreInput roundNumber={number} disabled />
         </div>
         <div className={style.turnsBox}>
           <div className={style.title}>{t('turns')}</div>
@@ -68,11 +56,11 @@ const Round = ({ number }: RoundProps) => {
         {renderResourceCounter('coin')}
       </div>
       <div className={style.realms}>
-        <RealmSelector incrementScore={incrementScore} decrementScore={decrementScore} />
+        <RealmSelector roundNumber={number} />
         <div className={style.divider}/>
-        <RealmSelector incrementScore={incrementScore} decrementScore={decrementScore} />
+        <RealmSelector roundNumber={number} />
         <div className={style.divider}/>
-        <RealmSelector incrementScore={incrementScore} decrementScore={decrementScore} />
+        <RealmSelector roundNumber={number} />
       </div>
     </div>
   )
