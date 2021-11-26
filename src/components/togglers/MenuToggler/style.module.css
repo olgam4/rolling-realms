@@ -1,0 +1,37 @@
+.menu {
+  position: fixed;
+  top: 5px;
+  right: -225px;
+  width: 250px;
+  padding: 0.73em;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: right 1s ease-in-out;
+}
+
+.menu.visible {
+  right: 0px;
+}
+
+.toggle {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.toggle:hover {
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 30px;
+}
+
+.divider {
+  width: 11px;
+  height: 2px;
+}
+
