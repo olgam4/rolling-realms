@@ -1,0 +1,37 @@
+.firstRow {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.stars {
+  display: flex;
+  position: absolute;
+  top: 17px;
+  z-index: -1;
+}
+
+.secondRow {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+  background-color: transparent;
+  margin-bottom: 10px;
+}
+
+.thirdRow {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+  background-color: transparent;
+  margin-bottom: 10px;
+}
+
+.fourthRow {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+}

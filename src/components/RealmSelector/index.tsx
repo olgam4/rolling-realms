@@ -10,12 +10,13 @@ import MyLittleScythe from '../realms/MyLittleScythe'
 import Pendulum from '../realms/Pendulum'
 import Scythe from '../realms/Scythe'
 import Tapestry from '../realms/Tapestry'
+import TheSociety from '../realms/TheSociety'
 import Viticulture from '../realms/Viticulture'
 import Wingspan from '../realms/Wingpsan'
 
 import style from './style.module.css'
 
-type Realms = 'viticulture' | 'charterstone' | 'betweentwocastles' | 'scythe' | 'betweentwocities' | 'euphoria' | 'mylittlescythe' | 'wingspan' | 'tapestry' | 'pendulum'
+type Realms = 'viticulture' | 'charterstone' | 'betweentwocastles' | 'scythe' | 'betweentwocities' | 'euphoria' | 'mylittlescythe' | 'wingspan' | 'tapestry' | 'pendulum' | 'thesociety'
 
 const pickRealmComponent = (realm: Realms) => {
   switch (realm) {
@@ -39,6 +40,8 @@ const pickRealmComponent = (realm: Realms) => {
       return <Tapestry />
     case 'pendulum':
       return <Pendulum />
+    case 'thesociety':
+      return <TheSociety />
     default:
       return <div>{realm}</div>
   }
@@ -66,6 +69,8 @@ const pickRealmName = (realm: Realms) => {
       return 'Tapestry'
     case 'pendulum':
       return 'Pendulum'
+    case 'thesociety':
+      return 'The Society'
     default:
       return 'Unknown'
   }
@@ -89,6 +94,7 @@ const RealmChoices = (setRealm: Function) => {
       {renderRealmChoice('pendulum')}
       {renderRealmChoice('scythe')}
       {renderRealmChoice('tapestry')}
+      {renderRealmChoice('thesociety')}
       {renderRealmChoice('viticulture')}
       {renderRealmChoice('wingspan')}
     </div>
@@ -97,7 +103,7 @@ const RealmChoices = (setRealm: Function) => {
 }
 
 const pickRandomRealm = () => {
-  const realms: Realms[] = ['betweentwocastles', 'betweentwocities', 'charterstone', 'euphoria', 'scythe', 'viticulture', 'mylittlescythe', 'wingspan', 'tapestry', 'pendulum']
+  const realms: Realms[] = ['betweentwocastles', 'betweentwocities', 'charterstone', 'euphoria', 'scythe', 'viticulture', 'mylittlescythe', 'wingspan', 'tapestry', 'pendulum', 'thesociety']
   const randomIndex = Math.floor(Math.random() * realms.length)
   return realms[randomIndex]
 }

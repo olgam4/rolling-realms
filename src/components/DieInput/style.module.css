@@ -1,7 +1,8 @@
 .input {
-  background-color: transparent;
+  background-color: var(--background);
   border: 1px solid var(--text-color);
   color: var(--text-color);
+  transition: all 1s ease;
 }
 
 .big {
