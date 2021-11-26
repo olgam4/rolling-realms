@@ -21,7 +21,8 @@ const Round = ({ number }: RoundProps) => {
     incrementScore,
     decrementScore,
     advanceScore,
-    backScore
+    backScore,
+    resetScore,
   } = useRoundScore(0)
   const { t } = useTranslation()
 
@@ -30,6 +31,7 @@ const Round = ({ number }: RoundProps) => {
       resource={resource}
       incrementScore={advanceScore}
       decrementScore={backScore}
+      resetScore={resetScore}
     />
   )
 

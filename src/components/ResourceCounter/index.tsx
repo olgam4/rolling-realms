@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { times } from 'lodash'
 import { useTranslation } from 'react-i18next'
 
 import Resource, { ResourceProps } from '../Resource'
@@ -9,16 +10,19 @@ type ResourceCounterProps = {
   resource: ResourceProps['type']
   incrementScore: () => void
   decrementScore: () => void
+  resetScore: () => void
 }
 
 const ResourceCounter = ({
   incrementScore,
   decrementScore,
+  resetScore,
   resource
 }: ResourceCounterProps) => {
   const { t } = useTranslation()
   const [current, setCurrent] = useState(0)
   const [total, setTotal] = useState(0)
+  const [asking, setAsking] = useState(false)
 
   const handleIncrement = () => {
     setCurrent(current + 1)
@@ -32,6 +36,17 @@ const ResourceCounter = ({
     decrementScore()
   }
 
+  const askIfSure = () => {
+    setAsking(true)
+  }
+
+  const thenReset = () => {
+    resetScore()
+    setCurrent(0)
+    setTotal(0)
+    setAsking(false)
+  }
+
   return (
     <div className={style.resourceCounter}>
       <div onClick={handleDecrement} className={style.modifier}>➖</div>
@@ -40,7 +55,13 @@ const ResourceCounter = ({
           {current}
           <Resource type={resource} />
         </div>
-        {t('total')}: {total}
+        <div className={style.total}>
+          {t('total')}: {total}
+          { asking ?
+            <div className={style.reset} onClick={thenReset}>?</div> :
+            <div className={style.reset} onClick={askIfSure}>↻</div>
+          }
+        </div>
       </div>
       <div onClick={handleIncrement} className={style.modifier}>➕</div>
     </div>
