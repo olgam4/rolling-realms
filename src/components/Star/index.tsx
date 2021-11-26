@@ -22,7 +22,7 @@ const Star = ({ disabled, requirement, onMark, onDemark }: StarProps) => {
   const star = disabled ? '🌟' : isMarked ? '🌟' : '⚫️'
 
   return (
-    <div className={style.star} onClick={mark}>
+    <div className={`${style.star} ${!disabled && style.interactive}`} onClick={mark}>
       {requirement}
       {star}
     </div>

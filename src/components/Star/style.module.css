@@ -1,3 +1,7 @@
 .star {
   user-select: none;
 }
+
+.star.interactive:hover {
+  cursor: pointer;
+}

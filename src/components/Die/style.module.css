@@ -13,11 +13,17 @@
 .die:hover {
   --bg: #f0f0f0;
   --pip: #000;
+  cursor: pointer;
 }
 
 .marked {
   --pip: #eee;
   --bg: #4A4A4A;
+}
+
+.marked:hover {
+  --pip: #bbb;
+  --bg: #2A2A2A;
 }
 
 .die:before {
