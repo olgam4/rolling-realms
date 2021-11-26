@@ -1,11 +1,10 @@
+import useTheme from '../../../hooks/useTheme'
+
 import style from './style.module.css'
 
-type Props = {
-  theme : any
-  toggleTheme : any
-}
+const ThemeToggler = () => {
+  const { theme, toggleTheme } = useTheme()
 
-const ThemeToggler = ({ theme, toggleTheme}: Props) => {
   return (
     <button
       className={style.themeToggler}

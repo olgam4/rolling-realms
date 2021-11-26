@@ -24,7 +24,7 @@ const MenuToggler = () => {
         <div className={style.divider} />
         <RulesToggler />
         <div className={style.divider} />
-        <ThemeToggler theme="light" toggleTheme={() => undefined} />
+        <ThemeToggler />
       </div>
     </div>
   )

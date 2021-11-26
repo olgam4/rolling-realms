@@ -4,10 +4,13 @@ import './index.css'
 import './i18n'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import { ThemeProvider } from './hooks/useTheme'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )
