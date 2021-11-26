@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# [Rolling Realms](https://olgam4.github.io/rolling-realms/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> In the early days of the coronavirus pandemic, a time of self-isolation for many people, Jamey decided to create an infinitely scaling roll-and-write game to teach and play with people around the world via Facebook Live.
+>
+> In Rolling Realms, players compete to earn the most stars in a series of minigames over 3 rounds. This is a roll-and-write game, meaning that players will write on the game components using dry-erase markers.
+>
+> Each turn, one player rolls 2 dice, and all players use the dice results on their realm cards to generate resources and earn stars. After 3 rounds, the player with the most stars wins!
+
+This project aims to let people play the Rolling Realms PnP game remotely. There are other digital versions, but I was looking for a project to try and tackle myself. Also, I love the community around this game, having played lots of variants found on the [BGG Forums](https://boardgamegeek.com/boardgame/305682/rolling-realms/forums/69).
+
+To give back to the community, I built this app and plan to keep updating it with new Realms, features and UI enhancements.
 
 ## Available Scripts
 
@@ -14,11 +22,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\
@@ -29,18 +32,13 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### `yarn deploy`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Will first run `predeploy`, which itself runs `yarn build`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Afterwards, it will use gh-pages to deploy the `build` folder resulting from `predeploy`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## About me
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+If you want to know more about me, checkout my [linktr.ee](https://linktr.ee/oliviergamache) 🌴
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
