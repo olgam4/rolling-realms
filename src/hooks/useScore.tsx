@@ -39,11 +39,11 @@ const defaultState: State = {
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "SET_ROUND_ONE":
-      return { ...state, roundOne: action. payload }
+      return { ...state, roundOne: action.payload }
     case "SET_ROUND_TWO":
-      return { ...state, roundTwo: action. payload }
+      return { ...state, roundTwo: action.payload }
     case "SET_ROUND_THREE":
-      return { ...state, roundThree: action. payload }
+      return { ...state, roundThree: action.payload }
     default:
       return state
   }
