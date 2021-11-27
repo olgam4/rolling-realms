@@ -20,6 +20,11 @@ const Footer = () => {
           </a>
         </div>
       </div>
+      <div>
+        <a href="https://github.com/olgam4/rolling-realms/issues" target="_blank" rel="noreferrer">
+          {t('report')}
+        </a>
+      </div>
     </div>
   )
 }
