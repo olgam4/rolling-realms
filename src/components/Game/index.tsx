@@ -8,6 +8,7 @@ import style from './style.module.css'
 
 const Game = () => {
   const { t } = useTranslation()
+
   return (
     <div className={style.game}>
       <div>

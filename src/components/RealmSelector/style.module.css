@@ -1,13 +1,5 @@
-.close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-  height: 3vh;
-  width: 3vw;
-}
-
 .realmChoices {
+  display: flex;
   position: absolute;
   top: 40px;
   flex-direction: column;
@@ -24,7 +16,6 @@
   user-select: none;
   cursor: pointer;
   transition: all 1s ease;
-  display: none;
 }
 
 .realmChoice {
@@ -48,8 +39,4 @@
 
 .realmTitle:hover {
   cursor: pointer;
-}
-
-.realmChoices.visible {
-  display: flex;
 }

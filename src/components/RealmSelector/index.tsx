@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import useRealms from '../../hooks/useRealms'
+import useOutsideAlerter from '../../hooks/useOutsideAlerter'
 import { Realm } from '../../hooks/useRealms/tools'
 
 import style from './style.module.css'
@@ -18,8 +19,15 @@ const RealmSelector = ({ roundNumber, cardNumber }: Props) => {
     setRealmChoicesVisible(!realmChoicesVisible)
   }
 
+  const closeRealmChoices = () => {
+    if (!realmChoicesVisible) return
+    setRealmChoicesVisible(false)
+  }
+
   const RealmChoices = () => {
     const { r, everyRealms } = useRealms()
+
+    const ref = useOutsideAlerter(closeRealmChoices)
 
     const renderRealmChoice = (realm: Realm) => {
       const setRealm = () => {
@@ -35,21 +43,17 @@ const RealmSelector = ({ roundNumber, cardNumber }: Props) => {
     }
 
     return (
-      <div className={`${style.realmChoices} ${realmChoicesVisible && style.visible}`}>
+      <div className={`${style.realmChoices} ${realmChoicesVisible && style.visible}`} ref={ref}>
         {everyRealms.sort().map(renderRealmChoice)}
       </div>
     )
-
   }
 
   return (
-    <>
-      <div className={style.close} />
-      <div onClick={toggleRealmChoicesVisible} className={style.realmTitle}>
-        {r(`${realms[cardNumber - 1]}.name`)}
-        <RealmChoices />
-      </div>
-    </>
+    <div onClick={toggleRealmChoicesVisible} className={style.realmTitle}>
+      {r(`${realms[cardNumber - 1]}.name`)}
+      {realmChoicesVisible && <RealmChoices />}
+    </div>
   )
 }
 
