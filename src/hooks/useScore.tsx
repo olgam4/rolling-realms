@@ -1,4 +1,5 @@
-import { createContext, useReducer, ReactElement, useContext } from 'react'
+import { useContext } from 'react'
+import { Provider, setupContext } from './base'
 
 type State = {
   roundOne: number
@@ -23,12 +24,7 @@ type ActionOnRoundThree = {
 
 type Action = ActionOnRoundOne | ActionOnRoundTwo | ActionOnRoundThree
 
-type ContextType = {
-  state: State
-  dispatch: React.Dispatch<Action>;
-}
-
-export const ScoreContext = createContext<ContextType | null>(null)
+export const ScoreContext = setupContext<State, Action>()
 
 const defaultState: State = {
   roundOne: 0,
@@ -49,19 +45,7 @@ const reducer = (state: State, action: Action): State => {
   }
 }
 
-type Props = {
-  children: ReactElement
-}
-
-export const ScoreProvider = ({ children }: Props) => {
-  const [state, dispatch] = useReducer(reducer, defaultState)
-
-  return (
-    <ScoreContext.Provider value={{ state, dispatch }}>
-      {children}
-    </ScoreContext.Provider>
-  )
-}
+export const { ProviderComponent: ScoreProvider } = Provider(ScoreContext, reducer, defaultState)
 
 type Rounds = 1 | 2 | 3
 

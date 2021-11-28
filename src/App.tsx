@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 
+import { ScoreProvider } from './hooks/useScore'
 import useTheme from './hooks/useTheme'
 
 import Game from './components/Game'
@@ -7,7 +8,7 @@ import Footer from './components/Footer'
 import MenuToggler from './components/togglers/MenuToggler'
 
 import './App.css'
-import { ScoreProvider } from './hooks/useScore'
+import { RealmsProvider } from './hooks/useRealms'
 
 function App() {
   const { theme } = useTheme()
@@ -16,7 +17,9 @@ function App() {
     <Suspense fallback={<div/>}>
       <div className="App" data-theme={theme}>
         <ScoreProvider>
-          <Game />
+          <RealmsProvider>
+            <Game />
+          </RealmsProvider>
         </ScoreProvider>
         <Footer />
         <MenuToggler />

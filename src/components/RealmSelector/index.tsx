@@ -1,142 +1,55 @@
 import { useState } from 'react'
 
-import Score from '../Score'
-
-import BetweenTwoCastles from '../realms/BetweenTwoCastles'
-import BetweenTwoCities from '../realms/BetweenTwoCities'
-import Charterstone from '../realms/Charterstone'
-import Euphoria from '../realms/Euphoria'
-import MyLittleScythe from '../realms/MyLittleScythe'
-import Pendulum from '../realms/Pendulum'
-import Scythe from '../realms/Scythe'
-import Tapestry from '../realms/Tapestry'
-import TheSociety from '../realms/TheSociety'
-import Viticulture from '../realms/Viticulture'
-import Wingspan from '../realms/Wingpsan'
+import useRealms from '../../hooks/useRealms'
+import { Realm } from '../../hooks/useRealms/tools'
 
 import style from './style.module.css'
 
-type Realms = 'viticulture' | 'charterstone' | 'betweentwocastles' | 'scythe' | 'betweentwocities' | 'euphoria' | 'mylittlescythe' | 'wingspan' | 'tapestry' | 'pendulum' | 'thesociety'
-
-const pickRealmComponent = (realm: Realms) => {
-  switch (realm) {
-    case 'viticulture':
-      return <Viticulture />
-    case 'charterstone':
-      return <Charterstone />
-    case 'betweentwocastles':
-      return <BetweenTwoCastles />
-    case 'scythe':
-      return <Scythe />
-    case 'betweentwocities':
-      return <BetweenTwoCities />
-    case 'euphoria':
-      return <Euphoria />
-    case 'mylittlescythe':
-      return <MyLittleScythe />
-    case 'wingspan':
-      return <Wingspan />
-    case 'tapestry':
-      return <Tapestry />
-    case 'pendulum':
-      return <Pendulum />
-    case 'thesociety':
-      return <TheSociety />
-    default:
-      return <div>{realm}</div>
-  }
-}
-
-const pickRealmName = (realm: Realms) => {
-  switch (realm) {
-    case 'viticulture':
-      return 'Viticulture'
-    case 'charterstone':
-      return 'Charterstone'
-    case 'betweentwocastles':
-      return 'Between Two Castles'
-    case 'scythe':
-      return 'Scythe'
-    case 'betweentwocities':
-      return 'Between Two Cities'
-    case 'euphoria':
-      return 'Euphoria'
-    case 'mylittlescythe':
-      return 'My Little Scythe'
-    case 'wingspan':
-      return 'Wingspan'
-    case 'tapestry':
-      return 'Tapestry'
-    case 'pendulum':
-      return 'Pendulum'
-    case 'thesociety':
-      return 'The Society'
-    default:
-      return 'Unknown'
-  }
-}
-
-const RealmChoices = (setRealm: Function) => {
-  const renderRealmChoice = (realm: Realms) => {
-    return (
-      <div className={style.realmChoice} key={realm} onClick={() => setRealm(realm)}>
-        {pickRealmName(realm)}
-      </div>
-    )
-  }
-  return (
-    <div className={style.realmChoices}>
-      {renderRealmChoice('betweentwocastles')}
-      {renderRealmChoice('betweentwocities')}
-      {renderRealmChoice('charterstone')}
-      {renderRealmChoice('euphoria')}
-      {renderRealmChoice('mylittlescythe')}
-      {renderRealmChoice('pendulum')}
-      {renderRealmChoice('scythe')}
-      {renderRealmChoice('tapestry')}
-      {renderRealmChoice('thesociety')}
-      {renderRealmChoice('viticulture')}
-      {renderRealmChoice('wingspan')}
-    </div>
-  )
-
-}
-
-const pickRandomRealm = () => {
-  const realms: Realms[] = ['betweentwocastles', 'betweentwocities', 'charterstone', 'euphoria', 'scythe', 'viticulture', 'mylittlescythe', 'wingspan', 'tapestry', 'pendulum', 'thesociety']
-  const randomIndex = Math.floor(Math.random() * realms.length)
-  return realms[randomIndex]
-}
-
 type Props = {
   roundNumber: 1 | 2 | 3
+  cardNumber: 1 | 2 | 3
 }
 
-const RealmSelector = ({ roundNumber }: Props) => {
-  const baseRealm = pickRandomRealm()
-  const [realm, setRealm] = useState<Realms>(baseRealm)
+const RealmSelector = ({ roundNumber, cardNumber }: Props) => {
+  const { r, realms, setRealmInRound } = useRealms(roundNumber)
   const [realmChoicesVisible, setRealmChoicesVisible] = useState(false)
-
-  const changeRealm = (realm: Realms) => {
-    setRealm(realm)
-    setRealmChoicesVisible(false)
-  }
 
   const toggleRealmChoicesVisible = () => {
     setRealmChoicesVisible(!realmChoicesVisible)
   }
 
+  const RealmChoices = () => {
+    const { r, everyRealms } = useRealms()
+
+    const renderRealmChoice = (realm: Realm) => {
+      const setRealm = () => {
+        setRealmInRound(realm, roundNumber, cardNumber)
+        toggleRealmChoicesVisible()
+      }
+
+      return (
+        <div className={style.realmChoice} key={realm} onClick={() => setRealm()}>
+          {r(`${realm}.name`)}
+        </div>
+      )
+    }
+
+    return (
+      <div className={`${style.realmChoices} ${realmChoicesVisible && style.visible}`}>
+        {everyRealms.sort().map(renderRealmChoice)}
+      </div>
+    )
+
+  }
+
   return (
-    <div className={style.realm}>
+    <>
+      <div className={style.close} />
       <div onClick={toggleRealmChoicesVisible} className={style.realmTitle}>
-        {pickRealmName(realm)}
+        {r(`${realms[cardNumber - 1]}.name`)}
+        <RealmChoices />
       </div>
-      {realmChoicesVisible && RealmChoices(changeRealm)}
-      {pickRealmComponent(realm)}
-      <div className={style.score}>
-        <Score roundNumber={roundNumber} />
-      </div>
-    </div>
+    </>
   )
 }
 

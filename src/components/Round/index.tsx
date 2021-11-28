@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 
 import DieInput from '../DieInput'
 import DieRandomizer from '../DieRandomizer'
-import RealmSelector from '../RealmSelector'
+import RealmCard from '../RealmCard'
 import { ResourceProps } from '../Resource'
 import ResourceCounter from '../ResourceCounter'
 import ScoreInput from '../ScoreInput'
@@ -56,11 +56,11 @@ const Round = ({ number }: RoundProps) => {
         {renderResourceCounter('coin')}
       </div>
       <div className={style.realms}>
-        <RealmSelector roundNumber={number} />
+        <RealmCard roundNumber={number} cardNumber={1} />
         <div className={style.divider}/>
-        <RealmSelector roundNumber={number} />
+        <RealmCard roundNumber={number} cardNumber={2} />
         <div className={style.divider}/>
-        <RealmSelector roundNumber={number} />
+        <RealmCard roundNumber={number} cardNumber={3} />
       </div>
     </div>
   )

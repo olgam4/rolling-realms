@@ -1,4 +1,5 @@
-import { createContext, useReducer, ReactElement, useContext } from 'react'
+import { useContext } from 'react'
+import { Provider, setupContext } from './base'
 
 type Themes = "light" | "dark"
 
@@ -10,12 +11,7 @@ type Action = {
   type: "LIGHTMODE" | "DARKMODE"
 }
 
-type ContextType = {
-  state: State
-  dispatch: React.Dispatch<Action>;
-}
-
-export const ThemeContext = createContext<ContextType | null>(null)
+const ThemeContext = setupContext<State, Action>()
 
 const savedTheme: Themes = localStorage.getItem("theme") as unknown as Themes  || "light"
 
@@ -36,28 +32,12 @@ const reducer = (state: State, action: Action): State => {
   }
 }
 
-type Props = {
-  children: ReactElement
-}
-
-export const ThemeProvider = ({ children }: Props) => {
-  const [state, dispatch] = useReducer(reducer, defaultState)
-
-  return (
-    <ThemeContext.Provider value={{ state, dispatch }}>
-      {children}
-    </ThemeContext.Provider>
-  )
-}
+export const { ProviderComponent: ThemeProvider } = Provider(ThemeContext, reducer, defaultState)
 
 const useTheme = () => {
   const context = useContext(ThemeContext)
-  if (context === undefined) {
+  if (context === undefined || context === null) {
     throw new Error("useTheme must be used within a ThemeProvider")
-  }
-
-  if (context === null) {
-    return { theme: '', toggleTheme: () => {} }
   }
 
   const toggleTheme = () => {
