@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/rolling-realms/static/css/main.e9f64ce0.chunk.css",
-    "main.js": "/rolling-realms/static/js/main.8be0c1c3.chunk.js",
-    "main.js.map": "/rolling-realms/static/js/main.8be0c1c3.chunk.js.map",
+    "main.css": "/rolling-realms/static/css/main.0a2cecb1.chunk.css",
+    "main.js": "/rolling-realms/static/js/main.201d9473.chunk.js",
+    "main.js.map": "/rolling-realms/static/js/main.201d9473.chunk.js.map",
     "runtime-main.js": "/rolling-realms/static/js/runtime-main.0527bb17.js",
     "runtime-main.js.map": "/rolling-realms/static/js/runtime-main.0527bb17.js.map",
     "static/js/2.7ee3fa62.chunk.js": "/rolling-realms/static/js/2.7ee3fa62.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.be2d829a.chunk.js": "/rolling-realms/static/js/3.be2d829a.chunk.js",
     "static/js/3.be2d829a.chunk.js.map": "/rolling-realms/static/js/3.be2d829a.chunk.js.map",
     "index.html": "/rolling-realms/index.html",
-    "static/css/main.e9f64ce0.chunk.css.map": "/rolling-realms/static/css/main.e9f64ce0.chunk.css.map",
+    "static/css/main.0a2cecb1.chunk.css.map": "/rolling-realms/static/css/main.0a2cecb1.chunk.css.map",
     "static/js/2.7ee3fa62.chunk.js.LICENSE.txt": "/rolling-realms/static/js/2.7ee3fa62.chunk.js.LICENSE.txt",
     "static/media/App.css": "/rolling-realms/static/media/LeagueGothic-Regular.308bc269.otf",
     "static/media/patterns.c92578ba.png": "/rolling-realms/static/media/patterns.c92578ba.png",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.0527bb17.js",
     "static/js/2.7ee3fa62.chunk.js",
-    "static/css/main.e9f64ce0.chunk.css",
-    "static/js/main.8be0c1c3.chunk.js"
+    "static/css/main.0a2cecb1.chunk.css",
+    "static/js/main.201d9473.chunk.js"
   ]
 }
