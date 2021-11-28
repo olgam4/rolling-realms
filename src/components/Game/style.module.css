@@ -47,3 +47,14 @@
   border-radius: 5px;
   padding: 10px;
 }
+
+.reset {
+  border: none;
+  background: none;
+  color: var(--text-color);
+  cursor: pointer;
+  border: 1px solid var(--text-color);
+  width: 70px;
+  height: 30px;
+  border-radius: 5px;
+}

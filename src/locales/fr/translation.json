@@ -3,6 +3,8 @@
   "author": "par Jamey Stegmaier",
   "smlogo": "Logo de Stonemaier Games",
   "description": "Le jeu se joue en 3 manches de 9 tours. À chaque manche, les joueurs choisissent collectivement 3 royaumes. À chaque tour, un joueur lance 2 dés à 6 faces, tous les joueurs utilisent ces dés dans les 3 royaumes de la manche. Chaque dé ne peut être utilisé qu'une fois, chacun dans un royaume différent. Le joueur possédant le plus d'étoiles remporte la partie",
+  "reroll": "Reroll realms",
+  "reroll": "Nouveaux royaumes",
   "round": "Manche",
   "turns": "tours",
   "total": "Total",

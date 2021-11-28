@@ -3,11 +3,14 @@ import { useTranslation } from 'react-i18next'
 import Round from '../Round'
 import ScoreInput from '../ScoreInput'
 
+import useRealms from '../../hooks/useRealms'
+
 import stonemaierLogo from '../../images/stonemaier-logo.png'
 import style from './style.module.css'
 
 const Game = () => {
   const { t } = useTranslation()
+  const { randomizeRealms } = useRealms()
 
   return (
     <div className={style.game}>
@@ -21,6 +24,9 @@ const Game = () => {
           <div className={style.description}>{t('description')}</div>
           <div className={style.totalScore}>
             <ScoreInput disabled />
+          </div>
+          <div>
+            <button className={style.reset} onClick={randomizeRealms}>{t('reroll')}</button>
           </div>
         </div>
       </div>
