@@ -1,5 +1,9 @@
-.resource {
+.box {
+  display: flex;
   user-select: none;
+}
+
+.resources {
   position: relative;
   display: flex;
 }
@@ -9,9 +13,18 @@
   left: 10px;
 }
 
+.required {
+  margin-right: 5px;
+}
+
 .cost {
   color: #f00;
   font-size: 1.8em;
   position: relative;
   top: -4px;
+  height: 1em;
+}
+
+.resourceCost {
+  padding-top: 6px;
 }

@@ -7,3 +7,9 @@
   display: flex;
   justify-content: space-around;
 }
+
+.stars {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}

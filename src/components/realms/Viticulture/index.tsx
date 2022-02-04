@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import Die from '../../Die'
 import Glass from '../../Glass'
+import Star from '../../Star'
 
 import style from './style.module.css'
 
@@ -22,6 +23,11 @@ const Viticulture = () => {
       <div className={style.wines}>
         {times(3, (i) => (
           <Glass value={i + 10} key={i} />
+        ))}
+      </div>
+      <div className={style.stars}>
+        {times(6, (i) => (
+          <Star disabled key={i} />
         ))}
       </div>
     </div>

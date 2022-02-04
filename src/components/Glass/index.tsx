@@ -1,6 +1,4 @@
-import { times } from 'lodash'
-
-import Star from '../Star'
+import { FaWineBottle } from 'react-icons/fa'
 
 import style from './style.module.css'
 
@@ -11,10 +9,7 @@ type GlassProps = {
 const Glass = ({ value }: GlassProps) => {
   return (
     <div className={style.glass}>
-      {`${value} 🍷`}
-      <div className={style.stars}>
-        {times(2, (i) =><Star disabled key={i} />)}
-      </div>
+      {`${value}`} <FaWineBottle />
     </div>
   )
 }

@@ -1,4 +1,7 @@
 import style from './style.module.css'
+import { FaHeart } from 'react-icons/fa'
+import { GiPumpkin } from 'react-icons/gi'
+import { RiMoneyDollarCircleFill } from 'react-icons/ri'
 
 export type ResourceProps = {
   type: "heart" | "coin" | "pumpkin"
@@ -10,11 +13,11 @@ export type ResourceProps = {
 const pickEmoji = (type: string | undefined) => {
   switch (type) {
     case `heart`:
-      return `❤️`
+      return <FaHeart color="#F10000" />
     case `coin`:
-      return `🪙`
+      return <RiMoneyDollarCircleFill color="#E7BD0C" />
     case `pumpkin`:
-      return `🎃`
+      return <GiPumpkin color="#F77218" />
     default:
       return null
   }
@@ -25,14 +28,16 @@ const Resource = ({ type, type2, cost=false, required }: ResourceProps ) => {
   const resourceEmoji2 = pickEmoji(type2)
 
   return (
-    <div className={style.resource}>
-      {required}
+    <div className={style.box}>
+      { required && <span className={style.required}>{required}</span> }
       { cost && <span className={style.cost}>-</span> }
-      <div>
-        {resourceEmoji}
-      </div> 
-      <div className={style.resource2}>
-      {resourceEmoji2}
+      <div className={style.resources}>
+        <div className={`${cost && style.resourceCost}`}>
+          {resourceEmoji}
+        </div> 
+        <div className={style.resource2}>
+        {resourceEmoji2}
+        </div>
       </div>
     </div>
   )

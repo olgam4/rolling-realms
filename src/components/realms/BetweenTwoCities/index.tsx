@@ -30,7 +30,7 @@ const BetweenTwoCities = () => {
           <DieInput big />
           <Resource type="heart" type2="heart" />
         </div>
-        <div className={style.column}>
+        <div className={style.resourceColumn}>
           <Resource type="pumpkin" type2="coin" />
           <Resource type="coin" type2="heart" />
           <Resource type="heart" type2="pumpkin" />

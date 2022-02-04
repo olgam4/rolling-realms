@@ -9,6 +9,8 @@
   position: absolute;
   top: 17px;
   z-index: -1;
+  align-items: center;
+  height: 30px;
 }
 
 .secondRow {
