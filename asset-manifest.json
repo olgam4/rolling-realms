@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/rolling-realms/static/css/main.0a2cecb1.chunk.css",
-    "main.js": "/rolling-realms/static/js/main.201d9473.chunk.js",
-    "main.js.map": "/rolling-realms/static/js/main.201d9473.chunk.js.map",
-    "runtime-main.js": "/rolling-realms/static/js/runtime-main.0527bb17.js",
-    "runtime-main.js.map": "/rolling-realms/static/js/runtime-main.0527bb17.js.map",
-    "static/js/2.7ee3fa62.chunk.js": "/rolling-realms/static/js/2.7ee3fa62.chunk.js",
-    "static/js/2.7ee3fa62.chunk.js.map": "/rolling-realms/static/js/2.7ee3fa62.chunk.js.map",
-    "static/js/3.be2d829a.chunk.js": "/rolling-realms/static/js/3.be2d829a.chunk.js",
-    "static/js/3.be2d829a.chunk.js.map": "/rolling-realms/static/js/3.be2d829a.chunk.js.map",
+    "main.css": "/rolling-realms/static/css/main.bb37acd7.chunk.css",
+    "main.js": "/rolling-realms/static/js/main.a76dc6e0.chunk.js",
+    "main.js.map": "/rolling-realms/static/js/main.a76dc6e0.chunk.js.map",
+    "runtime-main.js": "/rolling-realms/static/js/runtime-main.4af44547.js",
+    "runtime-main.js.map": "/rolling-realms/static/js/runtime-main.4af44547.js.map",
+    "static/js/2.ad56f724.chunk.js": "/rolling-realms/static/js/2.ad56f724.chunk.js",
+    "static/js/2.ad56f724.chunk.js.map": "/rolling-realms/static/js/2.ad56f724.chunk.js.map",
+    "static/js/3.b928ba2e.chunk.js": "/rolling-realms/static/js/3.b928ba2e.chunk.js",
+    "static/js/3.b928ba2e.chunk.js.map": "/rolling-realms/static/js/3.b928ba2e.chunk.js.map",
     "index.html": "/rolling-realms/index.html",
-    "static/css/main.0a2cecb1.chunk.css.map": "/rolling-realms/static/css/main.0a2cecb1.chunk.css.map",
-    "static/js/2.7ee3fa62.chunk.js.LICENSE.txt": "/rolling-realms/static/js/2.7ee3fa62.chunk.js.LICENSE.txt",
+    "static/css/main.bb37acd7.chunk.css.map": "/rolling-realms/static/css/main.bb37acd7.chunk.css.map",
+    "static/js/2.ad56f724.chunk.js.LICENSE.txt": "/rolling-realms/static/js/2.ad56f724.chunk.js.LICENSE.txt",
     "static/media/App.css": "/rolling-realms/static/media/LeagueGothic-Regular.308bc269.otf",
     "static/media/patterns.c92578ba.png": "/rolling-realms/static/media/patterns.c92578ba.png",
     "static/media/stonemaier-logo.64602327.png": "/rolling-realms/static/media/stonemaier-logo.64602327.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.0527bb17.js",
-    "static/js/2.7ee3fa62.chunk.js",
-    "static/css/main.0a2cecb1.chunk.css",
-    "static/js/main.201d9473.chunk.js"
+    "static/js/runtime-main.4af44547.js",
+    "static/js/2.ad56f724.chunk.js",
+    "static/css/main.bb37acd7.chunk.css",
+    "static/js/main.a76dc6e0.chunk.js"
   ]
 }
