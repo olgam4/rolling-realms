@@ -12,6 +12,7 @@
 }
 
 .requirements {
+  padding: 0 44px;
   display: flex;
   justify-content: space-around;
 }

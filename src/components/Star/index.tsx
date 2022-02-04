@@ -10,10 +10,10 @@ type StarProps = {
   onDemark?: () => void
 }
 
-const renderStar = () => {
+const renderStar = (disabled: boolean) => {
   return (
     <span>
-      <div className={style.starGlow} />
+      { disabled && <div className={style.starGlow} /> }
       <BsStarFill color="#FFF070" />
     </span>
   )
@@ -29,7 +29,9 @@ const Star = ({ disabled, requirement, onMark, onDemark }: StarProps) => {
 
   }
 
-  const star = disabled ? renderStar() : isMarked ? renderStar() : <BsSquareFill />
+  const disabledStar = renderStar(!disabled)
+
+  const star = disabled ? disabledStar : isMarked ? disabledStar : <BsSquareFill />
 
   return (
     <div className={`${style.star} ${!disabled && style.interactive} ${requirement && style.requirement}`} onClick={mark}>
