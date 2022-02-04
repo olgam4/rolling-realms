@@ -32,7 +32,7 @@ const Star = ({ disabled, requirement, onMark, onDemark }: StarProps) => {
   const star = disabled ? renderStar() : isMarked ? renderStar() : <BsSquareFill />
 
   return (
-    <div className={`${style.star} ${!disabled && style.interactive}`} onClick={mark}>
+    <div className={`${style.star} ${!disabled && style.interactive} ${requirement && style.requirement}`} onClick={mark}>
       {requirement}
       {star}
     </div>

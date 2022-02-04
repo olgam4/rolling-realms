@@ -3,6 +3,10 @@
   position: relative;
 }
 
+.requirement .starGlow {
+  left: 22px;
+}
+
 .starGlow {
   position: absolute;
   top: 3px;
