@@ -4,6 +4,7 @@ import Charterstone from '../../components/realms/Charterstone'
 import Euphoria from '../../components/realms/Euphoria'
 import MyLittleScythe from '../../components/realms/MyLittleScythe'
 import Pendulum from '../../components/realms/Pendulum'
+import RollingRealms from '../../components/realms/RollingRealms'
 import Scythe from '../../components/realms/Scythe'
 import Tapestry from '../../components/realms/Tapestry'
 import TheSociety from '../../components/realms/TheSociety'
@@ -22,6 +23,7 @@ export type Realm =
   | 'tapestry' 
   | 'pendulum' 
   | 'thesociety'
+  | 'rollingrealms'
 
 export const realms = [
   'viticulture',
@@ -35,6 +37,7 @@ export const realms = [
   'tapestry',
   'pendulum',
   'thesociety',
+  'rollingrealms',
 ] as Realm[]
 
 type Round = [Realm, Realm, Realm]
@@ -79,6 +82,8 @@ export const getRealmName = (realm: Realm) => {
       return 'Pendulum'
     case 'thesociety':
       return 'The Society'
+    case 'rollingrealms':
+      return 'Rolling Realms'
     default:
       return 'Unknown'
   }
@@ -108,6 +113,8 @@ export const getRealmComponent = (realm: Realm) => {
       return <Pendulum />
     case 'thesociety':
       return <TheSociety />
+    case 'rollingrealms':
+      return <RollingRealms />
     default:
       return null
   }
@@ -137,6 +144,8 @@ export const getRealmId = (realm : Realm) => {
       return 'J'
     case 'thesociety':
       return 'K'
+    case 'rollingrealms':
+      return 'L'
     default:
       return null
   }
@@ -166,6 +175,8 @@ export const getRealmFromId = (id : string): Realm => {
       return 'pendulum'
     case 'K':
       return 'thesociety'
+    case 'L':
+      return 'rollingrealms'
     default:
       return 'viticulture'
   }

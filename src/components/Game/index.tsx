@@ -13,14 +13,15 @@ import style from './style.module.css'
 // TODO: Put hashing in another component
 
 const Game = () => {
-  const notificationRef = useRef(null)
+  const notificationRef = useRef(document.createElement('div'))
   const { t } = useTranslation()
   const { randomizeRealms, setRealmsFromHash, hash } = useRealms()
   const [newHash, setHash] = useState(hash)
   const [changingHash, setChangingHash] = useState(false)
 
   useEffect(() => {
-    notificationRef.current && notificationRef.current.addEventListener('animationend', () => {
+  console.log(notificationRef.current)
+    if(notificationRef.current != null) notificationRef.current.addEventListener('animationend', () => {
       if (notificationRef.current) notificationRef.current.style.display = 'none'
     })
   })
@@ -29,7 +30,7 @@ const Game = () => {
     setRealmsFromHash(newHash)
   }
 
-  const toggleChangingHash = (event) => {
+  const toggleChangingHash = () => {
     setChangingHash(!changingHash)
     setHash(hash)
   }
@@ -39,7 +40,7 @@ const Game = () => {
     setChangingHash(false)
   }
 
-  const onKeyPressHash = (event) => {
+  const onKeyPressHash = (event: any) => {
     if (event.key === 'Enter') changeHash()
   }
 
