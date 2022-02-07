@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BsSquareFill, BsStarFill } from 'react-icons/bs'
+import { BsStar, BsStarFill } from 'react-icons/bs'
 
 import style from './style.module.css'
 
@@ -31,7 +31,7 @@ const Star = ({ disabled, requirement, onMark, onDemark }: StarProps) => {
 
   const disabledStar = renderStar(!disabled)
 
-  const star = disabled ? disabledStar : isMarked ? disabledStar : <BsSquareFill />
+  const star = disabled ? disabledStar : isMarked ? disabledStar : <BsStar />
 
   return (
     <div className={`${style.star} ${!disabled && style.interactive} ${requirement && style.requirement}`} onClick={mark}>
