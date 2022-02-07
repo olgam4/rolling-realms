@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { GiCardboardBoxClosed } from 'react-icons/gi'
-import { BsSquareFill } from 'react-icons/bs'
+import { FaBoxOpen } from 'react-icons/fa'
 
 import style from './style.module.css'
 
@@ -13,7 +13,7 @@ const Box = () => {
 
   return (
     <div className={style.box} onClick={mark}>
-      {marked ? <BsSquareFill /> : <GiCardboardBoxClosed />}
+      {marked ? <FaBoxOpen /> : <GiCardboardBoxClosed />}
     </div>
   )
 }

@@ -55,6 +55,55 @@
   cursor: pointer;
   border: 1px solid var(--text-color);
   width: 70px;
-  height: 30px;
+  height: fit-content;
+  padding: 5px;
   border-radius: 5px;
 }
+
+.realmsHashing {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputHash {
+  width: 50px;
+  height: 1em;
+  background-color: transparent;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.hashAndClipboard {
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  position: relative;
+}
+
+.hash {
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.notification {
+  position: absolute;
+  width: fit-content;
+  left: calc(100% + 5px);
+  display: none;
+  animation: pop 3s;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+

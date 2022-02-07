@@ -112,3 +112,73 @@ export const getRealmComponent = (realm: Realm) => {
       return null
   }
 }
+
+export const getRealmId = (realm : Realm) => {
+  switch (realm) {
+    case 'viticulture':
+      return 'A'
+    case 'charterstone':
+      return 'B'
+    case 'betweentwocastles':
+      return 'C'
+    case 'scythe':
+      return 'D'
+    case 'betweentwocities':
+      return 'E'
+    case 'euphoria':
+      return 'F'
+    case 'mylittlescythe':
+      return 'G'
+    case 'wingspan':
+      return 'H'
+    case 'tapestry':
+      return 'I'
+    case 'pendulum':
+      return 'J'
+    case 'thesociety':
+      return 'K'
+    default:
+      return null
+  }
+}
+
+export const getRealmFromId = (id : string): Realm => {
+  switch (id) {
+    case 'A':
+      return 'viticulture'
+    case 'B':
+      return 'charterstone'
+    case 'C':
+      return 'betweentwocastles'
+    case 'D':
+      return 'scythe'
+    case 'E':
+      return 'betweentwocities'
+    case 'F':
+      return 'euphoria'
+    case 'G':
+      return 'mylittlescythe'
+    case 'H':
+      return 'wingspan'
+    case 'I':
+      return 'tapestry'
+    case 'J':
+      return 'pendulum'
+    case 'K':
+      return 'thesociety'
+    default:
+      return 'viticulture'
+  }
+}
+
+export const getRealmsFromIds = (ids: string): Realm[] => {
+  const realms = ids.split('').map((id: string) => {
+    return getRealmFromId(id)
+  })
+
+  return realms
+}
+
+export const getHashForRealms = (realms: Realm[]) => {
+  return realms.map(getRealmId).join('')
+}

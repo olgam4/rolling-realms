@@ -3,7 +3,7 @@ import { GiArabicDoor } from 'react-icons/gi'
 const Door = () => {
   return (
     <div>
-      <GiArabicDoor />
+      <GiArabicDoor color="#3F301D" />
     </div>
   )
 }

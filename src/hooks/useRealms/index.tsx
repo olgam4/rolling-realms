@@ -3,7 +3,9 @@ import { Provider, setupContext } from '../base'
 import { 
   getRealmComponent,
   getRealmName,
+  getRealmsFromIds,
   pickNineRandomDifferentRealms,
+  getHashForRealms,
   realms as realmsList,
   Realm
 } from './tools'
@@ -42,7 +44,12 @@ type ActionResetRounds = {
   type: 'RESET_ROUNDS'
 }
 
-type Action = ActionRounds | ActionCards | ActionResetRounds
+type ActionSetRounds = {
+  type: 'SET_ROUNDS'
+  payload: Realm[]
+}
+
+type Action = ActionRounds | ActionCards | ActionResetRounds | ActionSetRounds
 
 const { roundOne, roundTwo, roundThree } = pickNineRandomDifferentRealms()
 
@@ -117,6 +124,19 @@ const reducer = (state: State, action: Action): State => {
     case 'RESET_ROUNDS':
       const newState = pickNineRandomDifferentRealms()
       return newState
+    case 'SET_ROUNDS':
+      state.roundOne[0] = action.payload[0]
+      state.roundOne[1] = action.payload[1]
+      state.roundOne[2] = action.payload[2]
+      state.roundTwo[0] = action.payload[3]
+      state.roundTwo[1] = action.payload[4]
+      state.roundTwo[2] = action.payload[5]
+      state.roundThree[0] = action.payload[6]
+      state.roundThree[1] = action.payload[7]
+      state.roundThree[2] = action.payload[8]
+      return {
+        ...state,
+      }
     default:
       return state
   }
@@ -133,9 +153,11 @@ type RActions = `${Realm}.name` | `${Realm}.component`
 type ReturnType = {
   r: (action: RActions) => string | null | ReactElement
   realms: Realm[]
+  hash: string
   everyRealms: Realm[]
   randomizeRealms: () => void
   setRealmInRound: (realm: Realm, round: RoundNumber, cardNumber: CardNumber) => void
+  setRealmsFromHash: (hash: string) => void
 }
 
 
@@ -153,6 +175,11 @@ const useRealms = (roundNumber?: RoundNumber): ReturnType =>  {
     context.dispatch({ type: 'RESET_ROUNDS' })
   }
 
+  const setRealmsFromHash = (hash: string) => {
+    const realms = getRealmsFromIds(hash)
+    context.dispatch({ type: 'SET_ROUNDS', payload: realms})
+  }
+
   const r = (action: RActions) => {
     const [realmString, actionString] = action.split('.') as [Realm, string]
 
@@ -167,13 +194,16 @@ const useRealms = (roundNumber?: RoundNumber): ReturnType =>  {
   }
 
   const realms = [...context.state.roundOne, ...context.state.roundTwo, ...context.state.roundThree]
+  const hash = getHashForRealms(realms)
 
   const baseReturnObject = {
     r,
     realms,
+    hash,
     everyRealms: realmsList,
     randomizeRealms,
-    setRealmInRound
+    setRealmInRound,
+    setRealmsFromHash,
   }
 
   if (roundNumber === 1) {

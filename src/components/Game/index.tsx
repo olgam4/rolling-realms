@@ -1,4 +1,6 @@
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { HiOutlineClipboardCheck } from 'react-icons/hi'
 
 import Round from '../Round'
 import ScoreInput from '../ScoreInput'
@@ -8,9 +10,43 @@ import useRealms from '../../hooks/useRealms'
 import stonemaierLogo from '../../images/stonemaier-logo.png'
 import style from './style.module.css'
 
+// TODO: Put hashing in another component
+
 const Game = () => {
+  const notificationRef = useRef(null)
   const { t } = useTranslation()
-  const { randomizeRealms } = useRealms()
+  const { randomizeRealms, setRealmsFromHash, hash } = useRealms()
+  const [newHash, setHash] = useState(hash)
+  const [changingHash, setChangingHash] = useState(false)
+
+  useEffect(() => {
+    notificationRef.current && notificationRef.current.addEventListener('animationend', () => {
+      if (notificationRef.current) notificationRef.current.style.display = 'none'
+    })
+  })
+  
+  const updateRealmsFromHash = () => {
+    setRealmsFromHash(newHash)
+  }
+
+  const toggleChangingHash = (event) => {
+    setChangingHash(!changingHash)
+    setHash(hash)
+  }
+
+  const changeHash = () => {
+    setRealmsFromHash(newHash)
+    setChangingHash(false)
+  }
+
+  const onKeyPressHash = (event) => {
+    if (event.key === 'Enter') changeHash()
+  }
+
+  const copyHashToClipBoard = () => {
+    navigator.clipboard.writeText(hash)
+    if (notificationRef.current) notificationRef.current.style.display = 'block'
+  }
 
   return (
     <div className={style.game}>
@@ -25,7 +61,26 @@ const Game = () => {
           <div className={style.totalScore}>
             <ScoreInput disabled />
           </div>
-          <div>
+          <div className={style.realmsHashing}>
+            {changingHash ?
+              <input
+                className={style.inputHash}
+                type="text"
+                value={newHash}
+                onChange={(e) => setHash(e.target.value)}
+                onBlur={changeHash}
+                onKeyPress={onKeyPressHash}
+                autoFocus
+              />
+              :
+              <div className={style.hashAndClipboard}>
+                <div className={style.hash} onClick={toggleChangingHash}>{hash}</div>
+                <div onClick={copyHashToClipBoard}><HiOutlineClipboardCheck /></div>
+                <div className={style.notification} ref={notificationRef}>
+                  {t('clipboard')}
+                </div>
+              </div>
+            }
             <button className={style.reset} onClick={randomizeRealms}>{t('reroll')}</button>
           </div>
         </div>

@@ -5,10 +5,12 @@
   align-items: space-around;
   text-align: center;
   user-select: none;
-  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
 }
 
-.stars {
-  display: flex;
-  justify-content: space-around;
+.cross {
+  position: absolute;
+  left: -3px;
+  top: 15px;
 }
