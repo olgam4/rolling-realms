@@ -5,6 +5,7 @@ import {
   getRealmName,
   getRealmsFromIds,
   pickNineRandomDifferentRealms,
+  pickNineRealmsFromHash,
   getHashForRealms,
   realms as realmsList,
   Realm
@@ -51,7 +52,15 @@ type ActionSetRounds = {
 
 type Action = ActionRounds | ActionCards | ActionResetRounds | ActionSetRounds
 
-const { roundOne, roundTwo, roundThree } = pickNineRandomDifferentRealms()
+const getInitialRealms = () => {
+  const queryParams = new URLSearchParams(window.location.search)
+  const game = queryParams.get('game')
+  const realms = game != null && game.length === 9 ?
+    pickNineRealmsFromHash(game) :
+    pickNineRandomDifferentRealms()
+  return realms
+}
+const { roundOne, roundTwo, roundThree } = getInitialRealms()
 
 const defaultState: State = {
   roundOne,
@@ -160,6 +169,12 @@ type ReturnType = {
   setRealmsFromHash: (hash: string) => void
 }
 
+const setGameParam = (hash: string) => {
+  var searchParams = new URLSearchParams(window.location.search)
+  searchParams.set('game', hash)
+  var newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
+  window.history.pushState(null, '', newRelativePathQuery);
+}
 
 const useRealms = (roundNumber?: RoundNumber): ReturnType =>  {
   const context = useContext(RealmsContext)
@@ -178,6 +193,7 @@ const useRealms = (roundNumber?: RoundNumber): ReturnType =>  {
   const setRealmsFromHash = (hash: string) => {
     const realms = getRealmsFromIds(hash)
     context.dispatch({ type: 'SET_ROUNDS', payload: realms})
+    setGameParam(hash)
   }
 
   const r = (action: RActions) => {
@@ -195,6 +211,7 @@ const useRealms = (roundNumber?: RoundNumber): ReturnType =>  {
 
   const realms = [...context.state.roundOne, ...context.state.roundTwo, ...context.state.roundThree]
   const hash = getHashForRealms(realms)
+  setGameParam(hash)
 
   const baseReturnObject = {
     r,

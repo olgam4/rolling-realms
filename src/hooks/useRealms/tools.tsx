@@ -58,6 +58,16 @@ export const pickNineRandomDifferentRealms = () => {
   }
 }
 
+export const pickNineRealmsFromHash = (hash: string) => {
+  const pickedRealms = getRealmsFromIds(hash)
+  return {
+    roundOne: pickedRealms.slice(0, 3) as Round,
+    roundTwo: pickedRealms.slice(3, 6) as Round,
+    roundThree: pickedRealms.slice(6, 9) as Round,
+  }
+  
+}
+
 export const getRealmName = (realm: Realm) => {
   switch (realm) {
     case 'viticulture':
