@@ -17,14 +17,14 @@ const RollingRealms = () => {
       </div>
       <div className={style.rewards}>
         <div className={style.bundle}>
+          <OneCheck><Resource type="pumpkin" /></OneCheck>
           <OneCheck><Resource type="coin" /></OneCheck>
-          <OneCheck><Resource type="heart" /></OneCheck>
           <hr />
-          <OneCheck><Resource type="heart" /></OneCheck>
+          <OneCheck><Resource type="pumpkin" /></OneCheck>
         </div>
         <div className={style.bundle}>
-          <OneCheck><Resource type="coin" /></OneCheck>
           <OneCheck><Resource type="heart" /></OneCheck>
+          <OneCheck><Resource type="pumpkin" /></OneCheck>
           <hr />
           <OneCheck><Resource type="heart" /></OneCheck>
         </div>
