@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/rolling-realms/static/css/main.2993f33b.chunk.css",
-    "main.js": "/rolling-realms/static/js/main.73cd23a3.chunk.js",
-    "main.js.map": "/rolling-realms/static/js/main.73cd23a3.chunk.js.map",
+    "main.css": "/rolling-realms/static/css/main.3c54b563.chunk.css",
+    "main.js": "/rolling-realms/static/js/main.87339645.chunk.js",
+    "main.js.map": "/rolling-realms/static/js/main.87339645.chunk.js.map",
     "runtime-main.js": "/rolling-realms/static/js/runtime-main.97563ae9.js",
     "runtime-main.js.map": "/rolling-realms/static/js/runtime-main.97563ae9.js.map",
-    "static/js/2.59f9b120.chunk.js": "/rolling-realms/static/js/2.59f9b120.chunk.js",
-    "static/js/2.59f9b120.chunk.js.map": "/rolling-realms/static/js/2.59f9b120.chunk.js.map",
+    "static/js/2.babda9ac.chunk.js": "/rolling-realms/static/js/2.babda9ac.chunk.js",
+    "static/js/2.babda9ac.chunk.js.map": "/rolling-realms/static/js/2.babda9ac.chunk.js.map",
     "static/js/3.9e088b60.chunk.js": "/rolling-realms/static/js/3.9e088b60.chunk.js",
     "static/js/3.9e088b60.chunk.js.map": "/rolling-realms/static/js/3.9e088b60.chunk.js.map",
     "index.html": "/rolling-realms/index.html",
-    "static/css/main.2993f33b.chunk.css.map": "/rolling-realms/static/css/main.2993f33b.chunk.css.map",
-    "static/js/2.59f9b120.chunk.js.LICENSE.txt": "/rolling-realms/static/js/2.59f9b120.chunk.js.LICENSE.txt",
+    "static/css/main.3c54b563.chunk.css.map": "/rolling-realms/static/css/main.3c54b563.chunk.css.map",
+    "static/js/2.babda9ac.chunk.js.LICENSE.txt": "/rolling-realms/static/js/2.babda9ac.chunk.js.LICENSE.txt",
     "static/media/App.css": "/rolling-realms/static/media/LeagueGothic-Regular.308bc269.otf",
     "static/media/patterns.c92578ba.png": "/rolling-realms/static/media/patterns.c92578ba.png",
     "static/media/stonemaier-logo.64602327.png": "/rolling-realms/static/media/stonemaier-logo.64602327.png"
   },
   "entrypoints": [
     "static/js/runtime-main.97563ae9.js",
-    "static/js/2.59f9b120.chunk.js",
-    "static/css/main.2993f33b.chunk.css",
-    "static/js/main.73cd23a3.chunk.js"
+    "static/js/2.babda9ac.chunk.js",
+    "static/css/main.3c54b563.chunk.css",
+    "static/js/main.87339645.chunk.js"
   ]
 }
