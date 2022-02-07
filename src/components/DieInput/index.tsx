@@ -7,6 +7,7 @@ import style from './style.module.css'
 
 type DieInputProps = {
   big?: boolean
+  noBorder?: boolean
   resource?: ResourceProps['type'] | 'star'
 }
 
@@ -17,7 +18,7 @@ const pickClassname = (big: boolean) => {
   return style.small
 }
 
-const DieInput = ({ big=false, resource }: DieInputProps) => {
+const DieInput = ({ big=false, noBorder=false, resource }: DieInputProps) => {
   const [score, updateScore] = useState<number | string>('')
 
   const onScoreChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,7 +36,7 @@ const DieInput = ({ big=false, resource }: DieInputProps) => {
   return (
     <div className={style.dieInput}>
       <input
-        className={`${className} ${style.input}`}
+        className={`${className} ${style.input} ${noBorder && style.noBorder}`}
         value={score}
         onChange={onScoreChange}
       />

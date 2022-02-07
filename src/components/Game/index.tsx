@@ -20,23 +20,18 @@ const Game = () => {
   const [changingHash, setChangingHash] = useState(false)
 
   useEffect(() => {
-  console.log(notificationRef.current)
     if(notificationRef.current != null) notificationRef.current.addEventListener('animationend', () => {
       if (notificationRef.current) notificationRef.current.style.display = 'none'
     })
   })
   
-  const updateRealmsFromHash = () => {
-    setRealmsFromHash(newHash)
-  }
-
   const toggleChangingHash = () => {
     setChangingHash(!changingHash)
     setHash(hash)
   }
 
   const changeHash = () => {
-    setRealmsFromHash(newHash)
+    setRealmsFromHash(newHash.toUpperCase())
     setChangingHash(false)
   }
 

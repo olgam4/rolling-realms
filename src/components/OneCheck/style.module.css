@@ -1,0 +1,16 @@
+.check {
+  cursor: pointer;
+  border: var(--text-color) 1px solid;
+  border-radius: 50%;
+  width: 25px;
+  height: 22px;
+  padding-top: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.cross {
+  position: absolute;
+}

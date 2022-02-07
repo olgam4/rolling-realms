@@ -1,0 +1,31 @@
+.rolling {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 85%;
+}
+
+.cubes {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.rewards {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.bundle {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.bundle hr {
+  width: 100%;
+  margin: 0;
+  border: none;
+}
