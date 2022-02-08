@@ -8,6 +8,7 @@
   "round": "Round",
   "turns": "turns",
   "total": "Total",
+  "azul": "Fill a tile in 1 of the rows to the left (doubles give you 2). All numbers in a row must match. When a row is full, slide 1 tile to the right grid, gain the resource and erase that row on the left. The same number can't be in the same row or column of the grid. At the end of the game, gain stars for each row and column completed.",
   "betweenTwoCastles": "Fill squares from the bottom up; #s on top must be lower than those below. When you complete a column, gain a bonus. Score 1 star per completed row (each castle has 3 rows).",
   "betweentwocities": "Fill a square; same #s can’t be orthogonally adjacent. Gain a bonus when you complete a row/column. Score stars equal to the lowest of the other 2 realms this round. This # cannot be higher than filled squares here.",
   "charterstone": "Mark either a bonus (note the other rolled die on the crate) or all crates matching the die.",

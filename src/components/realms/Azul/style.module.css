@@ -1,0 +1,15 @@
+.azul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  width: 100px;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-end;
+}

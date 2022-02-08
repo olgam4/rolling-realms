@@ -9,6 +9,7 @@
   "round": "Manche",
   "turns": "tours",
   "total": "Total",
+  "azul": "Fil a tile in 1 of the rows to the left (doubles give you 2). All numbers in a row must match. When a row is full, slide 1 tile to the right grid, gain the resource and erase that row on the left. The same number can't be in the same row or column of the grid. At the end of the game, gain stars for each row and column completed.",
   "betweenTwoCastles": "Remplissez les cases du bas vers le haut par valeur décroissante. Lorsque vous remplissez une colonne, gagnez le bonus.",
   "betweentwocities": "Notez 1 dé par carré. Deux mêmes chiffres nepeuvent pas être adjacents orthogonalement. Gagnez le bonus indiqué par ligne / colonne faite. Recevez un nombre d’ égal au plus faible de vos 2 autres royaumes de cette manche, limité au nombre de cases remplies ci-dessus.",
   "charterstone": "Gagnez le bonus lié à un dé et notez le 2nd dé (à jouer ailleurs) dans la caisse correspondante OU cochez toutes les valeurs des caisses qui correspondent au dé pour gagner les étoiles.",

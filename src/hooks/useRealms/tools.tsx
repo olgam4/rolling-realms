@@ -1,3 +1,4 @@
+import Azul from '../../components/realms/Azul'
 import BetweenTwoCastles from '../../components/realms/BetweenTwoCastles'
 import BetweenTwoCities from '../../components/realms/BetweenTwoCities'
 import Charterstone from '../../components/realms/Charterstone'
@@ -24,6 +25,7 @@ export type Realm =
   | 'pendulum' 
   | 'thesociety'
   | 'rollingrealms'
+  | 'azul'
 
 export const realms = [
   'viticulture',
@@ -38,6 +40,7 @@ export const realms = [
   'pendulum',
   'thesociety',
   'rollingrealms',
+  'azul',
 ] as Realm[]
 
 type Round = [Realm, Realm, Realm]
@@ -94,6 +97,8 @@ export const getRealmName = (realm: Realm) => {
       return 'The Society'
     case 'rollingrealms':
       return 'Rolling Realms'
+    case 'azul':
+      return 'Azul'
     default:
       return 'Unknown'
   }
@@ -125,6 +130,8 @@ export const getRealmComponent = (realm: Realm) => {
       return <TheSociety />
     case 'rollingrealms':
       return <RollingRealms />
+    case 'azul':
+      return <Azul />
     default:
       return null
   }
@@ -156,6 +163,8 @@ export const getRealmId = (realm : Realm) => {
       return 'K'
     case 'rollingrealms':
       return 'L'
+    case 'azul':
+      return 'M'
     default:
       return null
   }
@@ -187,6 +196,8 @@ export const getRealmFromId = (id : string): Realm => {
       return 'thesociety'
     case 'L':
       return 'rollingrealms'
+    case 'M':
+      return 'azul'
     default:
       return 'viticulture'
   }
