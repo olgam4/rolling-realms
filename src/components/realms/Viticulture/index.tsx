@@ -13,12 +13,12 @@ const Viticulture = () => {
     <div>
       <p>{t('viticulture')}</p>
       <div className={style.row}>
-        <Die resource="heart" value={1} />
-        <Die resource="heart" value={2} />
-        <Die resource="coin" value={3} />
-        <Die resource="coin" value={4} />
-        <Die resource="pumpkin" value={5} />
-        <Die resource="pumpkin" value={6} />
+        <Die resource="heart" value={1} crossable />
+        <Die resource="heart" value={2} crossable />
+        <Die resource="coin" value={3} crossable />
+        <Die resource="coin" value={4} crossable />
+        <Die resource="pumpkin" value={5} crossable />
+        <Die resource="pumpkin" value={6} crossable />
       </div>
       <div className={style.wines}>
         {times(3, (i) => (

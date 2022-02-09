@@ -95,4 +95,12 @@
 
 .resource {
   padding-left: 3px;
+  position: relative;
+}
+
+.cross {
+  position: absolute;
+  left: 0px;
+  top: -22px;
+  pointer-events: none;
 }

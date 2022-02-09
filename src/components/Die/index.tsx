@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { FaTimes } from 'react-icons/fa'
+
 import Resource, { ResourceProps } from '../Resource'
 
 import style from './style.module.css'
@@ -7,13 +9,24 @@ type DieProps = {
   resource?: ResourceProps['type']
   value: number
   disabled?: boolean
+  crossable?: boolean
 }
 
-const Die = ({ resource, value, disabled=false }: DieProps) => {
+const Die = ({ resource, value, crossable=false, disabled=false }: DieProps) => {
   const [isMarked, updateMark] = useState(false)
+  const [isCrossed, updateCross] = useState(false)
 
   const mark = () => {
     if (disabled) return
+    if (isCrossed) {
+      updateMark(!isMarked)
+      updateCross(!isCrossed)
+      return
+    }
+    if (crossable && isMarked) {
+      updateCross(!isCrossed)
+      return
+    }
     updateMark(!isMarked)
   }
 
@@ -49,6 +62,11 @@ const Die = ({ resource, value, disabled=false }: DieProps) => {
       { resource &&
         <div className={style.resource}>
           <Resource type={resource} />
+          {isCrossed &&
+            <div className={style.cross}>
+              <FaTimes size="22px" color="#C21807" />
+            </div>
+          }
         </div>
       }
     </span>
