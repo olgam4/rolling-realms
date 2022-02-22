@@ -59,15 +59,15 @@ const BetweenTwoCastles = () => {
           hasDoor: false,
         }])}
         {renderCastle([{
-          height: 3,
-          resource1: 'coin',
-          resource2: 'heart',
-          hasDoor: false,
-        },{
           height: 2,
           resource1: 'coin',
-          resource2: 'coin',
+          resource2: 'heart',
           hasDoor: true,
+        },{
+          height: 3,
+          resource1: 'coin',
+          resource2: 'coin',
+          hasDoor: false,
         }])}
       </div>
     </div>
