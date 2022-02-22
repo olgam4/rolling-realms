@@ -7,7 +7,7 @@ import ThemeToggler from '../ThemeToggler'
 import style from './style.module.css'
 
 const MenuToggler = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
 
   const toggle = () => setIsOpen(!isOpen)
 
