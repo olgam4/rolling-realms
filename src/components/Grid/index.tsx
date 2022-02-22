@@ -53,7 +53,7 @@ const Grid = () => {
       </div>
       <div className={style.gridRows}>
         <div className={style.gridColumn}>
-          {renderSquare('pumpkin', 'TL')}
+          {renderSquare('pumpkin', 'BR')}
           {renderSquare('coin', 'none')}
           {renderSquare('heart', 'BL')}
         </div>
